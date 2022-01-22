@@ -1,0 +1,15 @@
+// Place all the styles related to the UmrahCustomers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+table {
+  counter-reset: tableCount;
+}
+.counterCell:before {
+  content: counter(tableCount);
+  counter-increment: tableCount;
+}
+
+.primary_button_text {
+  style: "color:white"
+}

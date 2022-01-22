@@ -1,0 +1,17 @@
+<%= form_with(model: umrah_customer) do |form| %>
+  <% if umrah_customer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(umrah_customer.errors.count, "error") %> prohibited this umrah_customer from being saved:</h2>
+
+      <ul>
+        <% umrah_customer.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
