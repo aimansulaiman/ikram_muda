@@ -11,5 +11,15 @@ table {
 }
 
 .primary_button_text {
-  style: "color:white"
+  style: "color:white";
 }
+
+.customer-form-wrapper {
+  font-size: 12px;
+}
+
+#update_phone_error_message {
+  font-size: 8px;
+  color: red;
+}
+

@@ -8,6 +8,13 @@ class UmrahCustomersController < ApplicationController
 
   # GET /umrah_customers/1 or /umrah_customers/1.json
   def show
+    @umrah_customer = UmrahCustomer.find(params[:id])
+    @flight_inbound_detail = FlightInboundDetail.all
+    @flight_outbound_detail = FlightOutboundDetail.all
+
+    respond_to do |format|
+      format.html { render :show, locals: { umrah_customer_params:false}}
+    end
   end
 
   # GET /umrah_customers/new
@@ -17,6 +24,8 @@ class UmrahCustomersController < ApplicationController
 
   # GET /umrah_customers/1/edit
   def edit
+    @flight_inbound_detail = FlightInboundDetail.all
+    @flight_outbound_detail = FlightOutboundDetail.all
   end
 
   # POST /umrah_customers or /umrah_customers.json
@@ -38,7 +47,7 @@ class UmrahCustomersController < ApplicationController
   def update
     respond_to do |format|
       if @umrah_customer.update(umrah_customer_params)
-        format.html { redirect_to umrah_customer_url(@umrah_customer), notice: "Umrah customer was successfully updated." }
+        format.html { redirect_to umrah_customer_url(@umrah_customer, @flight_inbound_detail), notice: "Umrah customer was successfully updated." }
         format.json { render :show, status: :ok, location: @umrah_customer }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -65,6 +74,6 @@ class UmrahCustomersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def umrah_customer_params
-      params.fetch(:umrah_customer, {})
+      params.require(:umrah_customer).permit(:customer_name,:no_tel,:address,:total_participants,:date_registered,:total_paid,:total_cost,:flight_inbound_detail_id,:flight_outbound_detail_id)
     end
 end

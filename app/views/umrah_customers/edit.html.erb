@@ -1,6 +1,5 @@
-<h1>Editing Umrah Customer</h1>
-
-<%= render 'form', umrah_customer: @umrah_customer %>
+<h3>Editing Umrah Customer</h3>
 
 <%= link_to 'Show', @umrah_customer %> |
 <%= link_to 'Back', umrah_customers_path %>
+<%= render partial: 'umrah_customers/common/customer_form', locals: { is_display_only: false, umrah_customer: @umrah_customer } %>

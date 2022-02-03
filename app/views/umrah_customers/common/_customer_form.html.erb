@@ -1,0 +1,59 @@
+<div class="form-row customer-form-wrapper">
+  <div class="form-group col-md-4">
+    <%= form_with(model: @umrah_customer) do |form| %>
+      <%= form.label :customer_name, "Name" %>
+      <%= form.text_field :customer_name, class: "form-control customer-form-wrapper", value: @umrah_customer.customer_name, readonly: is_display_only %>
+      </div>
+      <div class="form-group col-md-2">
+        <%= form.label :no_tel, "Tel Number" %>
+        <%= form.text_field :no_tel, class: "form-control customer-form-wrapper", value: @umrah_customer.no_tel, readonly: is_display_only, id: 'customer_phone_number' %>
+        <p id="update_phone_error_message" ></p>
+      </div>
+      <div class="form-group col-2">
+        <%= form.label :flight_outbound_detail_id, "Return Date" %>
+        <%= form.collection_select :flight_outbound_detail_id, @flight_outbound_detail, :id,:flight_departure_date_from_kl, {include_blank: false} , { class: "form-control customer-form-wrapper", readonly: is_display_only } %>
+
+      </div>
+      <div class="form-group col-2">
+        <%= form.label :flight_inbound_detail_id, "Departure Date" %>
+        <%= form.collection_select :flight_inbound_detail_id, @flight_inbound_detail, :id, :flight_departure_date_from_saudi , { include_blank: false } ,{ class: "form-control customer-form-wrapper",readonly:is_display_only } %>
+      </div>
+      <div class="form-group col-10">
+        <%= form.label :address, "Address" %>
+        <%= form.text_field :address, class: "form-control customer-form-wrapper", value: @umrah_customer.address, readonly: is_display_only %>
+      </div>
+      <div class="form-row col-md-6">
+        <div class="form-group col-md-2">
+          <%= form.label :total_participants, "Total Participants" %>
+          <%= form.text_field :total_participants, class: "form-control customer-form-wrapper", value: @umrah_customer.total_participants.to_s, readonly: is_display_only %>
+        </div>
+        <div class="form-group col-md-2">
+          <%= form.label :total_cost, "Total Cost" %>
+          <%= form.text_field :total_cost, class: "form-control customer-form-wrapper", value: @umrah_customer.total_cost.to_s, readonly: is_display_only %>
+        </div>
+        <div class="form-group col-md-2">
+          <%= form.label :total_paid, "Total Paid" %>
+          <%= form.text_field :total_paid, class: "form-control customer-form-wrapper", value: @umrah_customer.total_paid.to_s, readonly: is_display_only %>
+        </div>
+        <div class="form-group col-md-2">
+          <%= form.label :total_cost, "Date Registered" %>
+          <%= form.text_field :total_cost, class: "form-control customer-form-wrapper", value: @umrah_customer.date_registered, readonly: is_display_only %>
+        </div>
+      </div>
+      </div>
+      <% if is_display_only %>
+        <%= link_to "Edit Customer Detail", edit_umrah_customer_path(@umrah_customer.id), method: :get, class: 'btn btn-primary text-white' %>
+      <% else %>
+        <% if umrah_customer.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(umrah_customer.errors.count, "error") %> prohibited this umrah_customer from being saved:</h2>
+            <ul>
+              <% umrah_customer.errors.each do |error| %>
+                <li><%= error.full_message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <%= form.submit "Update Details", class: "btn btn-primary text-white", id:"update_customer_detail" %>
+      <% end %>
+    <% end %>

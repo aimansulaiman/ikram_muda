@@ -1,4 +1,7 @@
-<%= form_with(model: umrah_customer) do |form| %>
+<% form_with(model: umrah_customer) do |form| %>
+  <%= form.label :customer_name, "Name" %>
+  <%= form.text_field :customer_name, class:"form-control customer-form-wrapper", value:@umrah_customer.customer_name %>
+
   <% if umrah_customer.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(umrah_customer.errors.count, "error") %> prohibited this umrah_customer from being saved:</h2>

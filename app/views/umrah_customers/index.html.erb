@@ -1,23 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Umrah Customers</h1>
-
-<!--<table>-->
-<!--  <thead>-->
-<!--    <tr>-->
-<!--      <th colspan="3"></th>-->
-<!--    </tr>-->
-<!--  </thead>-->
-
-<!--  <tbody>-->
-    <%# @umrah_customers.each do |umrah_customer| %>
-<!--      <tr>-->
-<!--        <td><%#= link_to 'Show', umrah_customer %></td>-->
-<!--        <td><%#= link_to 'Edit', edit_umrah_customer_path(umrah_customer) %></td>-->
-<!--        <td><%#= link_to 'Destroy', umrah_customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
-<!--      </tr>-->
-    <%# end %>
-<!--  </tbody>-->
 </table>
 <div class="container">
   <table class="table col-sm-10 align-self-center ">
@@ -36,16 +19,14 @@
         <th scope="row" class="counterCell"></th>
         <td><%= customer.customer_name %></td>
         <td><%= customer.flight_outbound_detail.flight_departure_date_from_kl %></td>
-        <td><%= customer.flight_inbound_detail.flight_departure_date_from_saudi %>
-        </td>
-        <td><%= link_to "View Detail", umrah_customer_path(customer.id), class:"btn btn-primary btn-sm primary_button_text text-white "  %></td>
+        <td><%= customer.flight_inbound_detail.flight_departure_date_from_saudi %></td>
+        <td>
+          <%= link_to "View Detail", umrah_customer_path(customer.id), class:"btn btn-primary btn-sm primary_button_text text-white"%></td>
       </tr>
     <% end %>
     </tbody>
   </table>
 </div>
-
-
 <br>
 
 <%= link_to 'New Umrah Customer', new_umrah_customer_path %>
