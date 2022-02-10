@@ -11,7 +11,8 @@ class UmrahCustomersController < ApplicationController
     @umrah_customer = UmrahCustomer.find(params[:id])
     @flight_inbound_detail = FlightInboundDetail.all
     @flight_outbound_detail = FlightOutboundDetail.all
-
+    @customer_total_paid = @umrah_customer.total_paid.to_s || '0'
+    @customer_total_cost = @umrah_customer.total_cost.to_s || '0'
     respond_to do |format|
       format.html { render :show, locals: { umrah_customer_params:false}}
     end
@@ -20,12 +21,20 @@ class UmrahCustomersController < ApplicationController
   # GET /umrah_customers/new
   def new
     @umrah_customer = UmrahCustomer.new
+    @flight_outbound_detail = FlightOutboundDetail.all
+    @flight_inbound_detail = FlightInboundDetail.all
+    @customer_total_paid =  '0.00'
+    @customer_total_cost =  '0.00'
+    @new_customer = true
+
   end
 
   # GET /umrah_customers/1/edit
   def edit
     @flight_inbound_detail = FlightInboundDetail.all
     @flight_outbound_detail = FlightOutboundDetail.all
+    @customer_total_paid = @umrah_customer.total_paid.to_s || '0'
+    @customer_total_cost = @umrah_customer.total_cost.to_s || '0'
   end
 
   # POST /umrah_customers or /umrah_customers.json

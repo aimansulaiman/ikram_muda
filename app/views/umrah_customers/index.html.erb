@@ -21,7 +21,12 @@
         <td><%= customer.flight_outbound_detail.flight_departure_date_from_kl %></td>
         <td><%= customer.flight_inbound_detail.flight_departure_date_from_saudi %></td>
         <td>
-          <%= link_to "View Detail", umrah_customer_path(customer.id), class:"btn btn-primary btn-sm primary_button_text text-white"%></td>
+          <%= link_to "View Detail", umrah_customer_path(customer.id), class:"btn btn-primary btn-sm primary_button_text text-white"%>
+        </td>
+        <td>
+          <%= link_to "Delete Customer", umrah_customer_path(customer.id), method: :delete, class:"btn btn-primary btn-sm primary_button_text text-white" %>
+        </td>
+
       </tr>
     <% end %>
     </tbody>
