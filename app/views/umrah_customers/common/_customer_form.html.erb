@@ -1,5 +1,5 @@
 <div class="form-row customer-form-wrapper">
-  <div class="form-group col-md-4">
+  <div class="form-group col-md-6">
     <%= form_with(model: @umrah_customer) do |form| %>
       <%= form.label :customer_name, "Name" %>
       <%= form.text_field :customer_name, class: "form-control customer-form-wrapper", value: @umrah_customer.customer_name, readonly: is_display_only %>
@@ -21,7 +21,7 @@
         <%= form.label :address, "Address" %>
         <%= form.text_field :address, class: "form-control customer-form-wrapper", value: @umrah_customer.address, readonly: is_display_only %>
       </div>
-      <div class="form-row col-md-6">
+      <div class="form-row col-md-8">
         <div class="form-group col-md-2">
           <%= form.label :total_participants, "Total Participants" %>
           <%= form.text_field :total_participants, class: "form-control customer-form-wrapper", value: @umrah_customer.total_participants.to_s, readonly: is_display_only %>
