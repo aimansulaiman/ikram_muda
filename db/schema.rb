@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_21_134737) do
+ActiveRecord::Schema.define(version: 2022_02_15_055244) do
 
   create_table "flight_inbound_details", force: :cascade do |t|
     t.date "flight_departure_date_from_saudi"
@@ -44,6 +44,15 @@ ActiveRecord::Schema.define(version: 2022_01_21_134737) do
     t.integer "flight_outbound_detail_id"
     t.index ["flight_inbound_detail_id"], name: "index_umrah_customers_on_flight_inbound_detail_id"
     t.index ["flight_outbound_detail_id"], name: "index_umrah_customers_on_flight_outbound_detail_id"
+  end
+
+  create_table "umrah_packages", force: :cascade do |t|
+    t.string "title"
+    t.string "package_type"
+    t.float "price"
+    t.string "hotel"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|

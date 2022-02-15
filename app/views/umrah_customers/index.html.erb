@@ -3,8 +3,8 @@
 <h1>Umrah Customers</h1>
 </table>
 <div class="container">
-  <table class="table col-sm-10 align-self-center ">
-    <thead class="thead-dark ">
+  <table class="table col-sm-10 align-self-center  ">
+    <thead class="thead-dark text-center ">
     <tr>
       <th scope="col">No</th>
       <th scope="col">Customer Name</th>
@@ -19,8 +19,8 @@
       <tr>
         <th scope="row" class="counterCell"></th>
         <td><%= customer.customer_name %></td>
-        <td><%= customer.flight_outbound_detail.flight_departure_date_from_kl %></td>
-        <td><%= customer.flight_inbound_detail.flight_departure_date_from_saudi %></td>
+        <td class="text-center"><%= customer.flight_outbound_detail.flight_departure_date_from_kl %></td>
+        <td class="text-center"><%= customer.flight_inbound_detail.flight_departure_date_from_saudi %></td>
         <td>
           <%= link_to "View Detail", umrah_customer_path(customer.id), class:"btn btn-primary btn-sm primary_button_text text-white"%>
         </td>
@@ -35,4 +35,4 @@
 </div>
 <br>
 
-<%= link_to 'New Umrah Customer', new_umrah_customer_path %>
+<%= link_to 'New Umrah Customer', new_umrah_customer_path, class:"btn btn-primary btn-sm primary_button_text text-white" %>

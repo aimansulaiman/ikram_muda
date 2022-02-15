@@ -1,0 +1,15 @@
+.select-form-margin-top {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+.input-w label, .input-w input {
+    float: none; /* if you had floats before? otherwise inline-block will behave differently */
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.text-center {
+    text-align:center;
+}
