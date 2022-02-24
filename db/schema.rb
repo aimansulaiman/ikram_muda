@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_15_055244) do
+ActiveRecord::Schema.define(version: 2022_02_17_130441) do
 
   create_table "flight_inbound_details", force: :cascade do |t|
     t.date "flight_departure_date_from_saudi"
@@ -28,6 +28,15 @@ ActiveRecord::Schema.define(version: 2022_02_15_055244) do
     t.string "landing_time_in_saudi"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "images", force: :cascade do |t|
+    t.string "name"
+    t.string "picture"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "umrah_package_id"
+    t.index ["umrah_package_id"], name: "index_images_on_umrah_package_id"
   end
 
   create_table "umrah_customers", force: :cascade do |t|
@@ -53,6 +62,8 @@ ActiveRecord::Schema.define(version: 2022_02_15_055244) do
     t.string "hotel"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "image_id"
+    t.index ["image_id"], name: "index_umrah_packages_on_image_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -67,6 +78,8 @@ ActiveRecord::Schema.define(version: 2022_02_15_055244) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "images", "umrah_packages"
   add_foreign_key "umrah_customers", "flight_inbound_details"
   add_foreign_key "umrah_customers", "flight_outbound_details"
+  add_foreign_key "umrah_packages", "images"
 end

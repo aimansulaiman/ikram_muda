@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :images
   resources :umrah_customers
 
   devise_for :users
