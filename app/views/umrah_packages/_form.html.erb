@@ -1,0 +1,20 @@
+<div class="col-md-2">
+  <%= render 'layouts/sidebar' %>
+</div>
+<%= form_with(model: umrah_package) do |form| %>
+  <% if umrah_package.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(umrah_package.errors.count, "error") %> prohibited this umrah_package from being saved:</h2>
+
+      <ul>
+        <% umrah_package.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

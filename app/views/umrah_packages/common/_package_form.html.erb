@@ -1,0 +1,64 @@
+<div class="col-md-2">
+  <%= render 'layouts/sidebar' %>
+</div>
+<div class="container form-group col-md-8">
+  <%= @image ||= false %>
+  <%= form_with(model: @umrah_package) do |form| %>
+
+    <%= form.label :title, "Title" %>
+    <%= form.text_field :title, placeholder: "e.g Umrah Safwa", class: "form-control customer-form-wrapper", disabled: disabled %>
+
+    <div class="form-group select-form-margin-top">
+      <%= form.label :package_type, "Umrah Type" %>
+      <%= form.select :package_type, ["Umrah Standard", "Umrah Ramadhan", "Umrah Family"], { include_blank: false }, { class: "form-control customer-form-wrapper", disabled: disabled } %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :price, "Price" %>
+      <br>
+      <div class="row col-md-12">
+        <label class="col-form-label">RM</label>
+        <div class="col-sm-11">
+          <%= form.number_field :price, placeholder: "0.00", class: "form-control customer-form-wrapper", disabled: disabled %>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="form-group select-form-margin-top">
+      <%= form.label :hotel %>
+      <%= form.text_field :hotel, placeholder: "e.g Hotel Safwa", class: "form-control customer-form-wrapper", disabled: disabled %>
+    </div>
+
+    <div class="form-group select-form-margin-top">
+      <%= form.label :package_type, "Umrah Type" %>
+      <%= form.select :package_type, ["Umrah Standard", "Umrah Ramadhan", "Umrah Family"], { include_blank: false }, { class: "form-control customer-form-wrapper", disabled: disabled } %>
+    </div>
+    <dl class="form-group">
+      <dd>
+        <p3>Package Poster</p3>
+      </dd>
+      <% if @image %>
+        <dd><%= image_tag(@image.picture.url, size: '150x150', class: "img-thumbnail", disabled: disabled) unless @image.picture.nil? %></dd>
+        <%= link_to "Change poster", edit_image_path(@image.id, is_from_package: true, package_id: @umrah_package.id), class: "btn btn-primary text-white select-form-margin-top" if disabled.blank? %>
+      <% elsif @is_new_package %>
+        <div class="form-group">
+          <%= form.label " ", :class => 'control-label col-lg-2' %>
+          <%= form.file_field :picture, accept: 'image/jpeg,image/gif,image/png', :class => 'form-control' %>
+        </div>
+      <% end %>
+    </dl>
+
+    <% if disabled %>
+      <%= link_to "Edit Package", edit_umrah_package_path(@umrah_package.id), class: "btn btn-primary text-white select-form-margin-top" %>
+    <% else %>
+      <% if @is_new_package %>
+        <%= form.submit "Register New Packages", class: "btn btn-primary text-white select-form-margin-top" %>
+      <% else %>
+        <%= form.submit "Update Package", class: "btn btn-primary text-white select-form-margin-top" %>
+      <% end %>
+    <% end %>
+    </div>
+
+
+
+  <% end %>

@@ -1,3 +1,7 @@
+<div class="col-md-2">
+  <%= render 'layouts/sidebar' %>
+</div>
 <h1>Welcome to admin page</h1>
+<%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
 
-<%= link_to "Sign Out", destroy_user_session_path, method: :delete  %>
+

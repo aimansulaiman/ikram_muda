@@ -1,0 +1,268 @@
+<div>
+  <ul class="navbar-nav navbar-nav-lg nav-tabs ">
+    <!-- Dashboards -->
+    <li class="navbar-vertical-aside-has-menu dropdown dropright">
+      <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle active" id="sidebarDropdown" role="button" href="#" data-toggle="dropdown" aria-haspopup="true" title="Dashboards" aria-expanded="false">
+        <i class="tio-home-vs-1-outlined nav-icon"></i>
+        <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Hello</span>
+      </a>
+
+
+      <div class="dropdown-menu">
+        <ul class="js-navbar-vertical-aside-submenu nav nav-sub ">
+
+          <li class="nav-item dropdown-item">
+            <a class="nav-link  " href="./index.html" title="Default">
+              <span class="tio-circle nav-indicator-icon"></span>
+              <span class="text-truncate">Default</span>
+            </a>
+          </li>
+
+          <li class="nav-item dropdown-item ">
+            <a class="nav-link active" href="./dashboard-alternative.html" title="Alternative">
+              <span class="tio-circle nav-indicator-icon"></span>
+              <span class="text-truncate">Alternative</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </li>
+    <!-- End Dashboards -->
+
+    <li class="nav-item">
+      <small class="nav-subtitle" title="Pages">Umrah</small>
+    </li>
+
+    <li class="navbar-vertical-aside-has-menu dropdown dropright">
+
+      <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle" href="#" title="Pakej" role="button" data-toggle="dropdown">
+        <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Umrah Customer</span>
+      </a>
+
+      <div class="dropdown-menu">
+        <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
+
+          <li class="nav-item dropdown-item">
+            <%= link_to "Umrah Customer", umrah_customers_path, class: "nav-link", title: "View customers list" %>
+          </li>
+
+
+          <li class="nav-item dropdown-item">
+            <%= link_to "New Customer", new_umrah_customer_path, class: "nav-link", title: "Register new customer" %>
+          </li>
+
+        </ul>
+      </div>
+    </li>
+
+    <!-- Apps -->
+    <li class="navbar-vertical-aside-has-menu dropdown dropright">
+
+      <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle" href="#" title="Pakej" role="button" data-toggle="dropdown">
+        <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Packages</span>
+      </a>
+
+      <div class="dropdown-menu">
+        <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
+          <li class="nav-item dropdown-item">
+            <%= link_to "Packages", umrah_packages_path, class:"nav-link", title:"View package list" %>
+          </li>
+          <li class="nav-item dropdown-item">
+            <%= link_to "Create new package", new_umrah_package_path, class:"nav-link", title:"Create new package" %>
+          </li>
+        </ul>
+      </div>
+    </li>
+    <!-- End Apps -->
+
+    <!-- Authentication -->
+    <li class="navbar-vertical-aside-has-menu ">
+      <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle " href="javascript:;" title="Authentication">
+        <i class="tio-lock-outlined nav-icon"></i>
+        <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Authentication</span>
+      </a>
+
+      <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
+        <li class="navbar-vertical-aside-has-menu ">
+          <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle" href="javascript:;" title="Sign In">
+            <span class="tio-circle nav-indicator-icon"></span>
+            <span class="text-truncate">Sign In</span>
+          </a>
+
+          <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
+            <li class="nav-item">
+              <a class="nav-link " href="./authentication-signin-basic.html" title="Basic">
+                <span class="tio-circle-outlined nav-indicator-icon"></span>
+                <span class="text-truncate">Basic</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="./authentication-signin-cover.html" title="Cover">
+                <span class="tio-circle-outlined nav-indicator-icon"></span>
+                <span class="text-truncate">Cover</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="navbar-vertical-aside-has-menu ">
+          <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle" href="javascript:;" title="Sign Up">
+            <span class="tio-circle nav-indicator-icon"></span>
+            <span class="text-truncate">Sign Up</span>
+          </a>
+
+          <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
+            <li class="nav-item">
+              <a class="nav-link " href="./authentication-signup-basic.html" title="Basic">
+                <span class="tio-circle-outlined nav-indicator-icon"></span>
+                <span class="text-truncate">Basic</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="./authentication-signup-cover.html" title="Cover">
+                <span class="tio-circle-outlined nav-indicator-icon"></span>
+                <span class="text-truncate">Cover</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="navbar-vertical-aside-has-menu ">
+          <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle" href="javascript:;" title="Reset Password">
+            <span class="tio-circle nav-indicator-icon"></span>
+            <span class="text-truncate">Reset Password</span>
+          </a>
+
+          <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
+            <li class="nav-item">
+              <a class="nav-link " href="./authentication-reset-password-basic.html" title="Basic">
+                <span class="tio-circle-outlined nav-indicator-icon"></span>
+                <span class="text-truncate">Basic</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="./authentication-reset-password-cover.html" title="Cover">
+                <span class="tio-circle-outlined nav-indicator-icon"></span>
+                <span class="text-truncate">Cover</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="navbar-vertical-aside-has-menu ">
+          <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle" href="javascript:;" title="Email Verification">
+            <span class="tio-circle nav-indicator-icon"></span>
+            <span class="text-truncate">Email Verification</span>
+          </a>
+
+          <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
+            <li class="nav-item">
+              <a class="nav-link " href="./authentication-email-verification-basic.html" title="Basic">
+                <span class="tio-circle-outlined nav-indicator-icon"></span>
+                <span class="text-truncate">Basic</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="./authentication-email-verification-cover.html" title="Cover">
+                <span class="tio-circle-outlined nav-indicator-icon"></span>
+                <span class="text-truncate">Cover</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="navbar-vertical-aside-has-menu ">
+          <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle" href="javascript:;" title="2-step Verification">
+            <span class="tio-circle nav-indicator-icon"></span>
+            <span class="text-truncate">2-step Verification</span>
+          </a>
+
+          <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
+            <li class="nav-item">
+              <a class="nav-link " href="./authentication-two-step-verification-basic.html" title="Basic">
+                <span class="tio-circle-outlined nav-indicator-icon"></span>
+                <span class="text-truncate">Basic</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="./authentication-two-step-verification-cover.html" title="Cover">
+                <span class="tio-circle-outlined nav-indicator-icon"></span>
+                <span class="text-truncate">Cover</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:;" data-toggle="modal" data-target="#welcomeMessageModal" title="Welcome Message">
+            <span class="tio-circle nav-indicator-icon"></span>
+            <span class="text-truncate">Welcome Message</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link " href="./error-404.html" title="Error 404">
+            <span class="tio-circle nav-indicator-icon"></span>
+            <span class="text-truncate">Error 404</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link " href="./error-500.html" title="Error 500">
+            <span class="tio-circle nav-indicator-icon"></span>
+            <span class="text-truncate">Error 500</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+    <!-- End Authentication -->
+
+    <li class="nav-item ">
+      <a class="js-nav-tooltip-link nav-link " href="./welcome-page.html" title="Welcome page" data-placement="left">
+        <i class="tio-visible-outlined nav-icon"></i>
+        <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Welcome Page</span>
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <small class="nav-subtitle" title="Layouts">Layouts</small>
+      <small class="tio-more-horizontal nav-subtitle-replacer"></small>
+    </li>
+
+    <li class="nav-item ">
+      <a class="js-nav-tooltip-link nav-link " href="./layouts/layouts.html" title="Layouts" data-placement="left">
+        <i class="tio-dashboard-vs-outlined nav-icon"></i>
+        <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Layouts</span>
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <div class="nav-divider"></div>
+    </li>
+
+    <li class="nav-item">
+      <small class="nav-subtitle" title="Documentation">Documentation</small>
+      <small class="tio-more-horizontal nav-subtitle-replacer"></small>
+    </li>
+
+    <li class="nav-item ">
+      <a class="js-nav-tooltip-link nav-link" href="./documentation/index.html" title="Documentation" data-placement="left">
+        <i class="tio-book-opened nav-icon"></i>
+        <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Documentation <span class="badge badge-primary badge-pill ml-1">v1.1</span></span>
+      </a>
+    </li>
+
+    <li class="nav-item ">
+      <a class="js-nav-tooltip-link nav-link" href="./documentation/typography.html" title="Components" data-placement="left">
+        <i class="tio-layers-outlined nav-icon"></i>
+        <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Components</span>
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <small class="tio-more-horizontal nav-subtitle-replacer"></small>
+    </li>
+  </ul>
+</div>
+

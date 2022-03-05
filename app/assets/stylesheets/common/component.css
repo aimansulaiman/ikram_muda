@@ -1,0 +1,96 @@
+.carousel-image-one {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%), url('home/carousel_1.jpeg');
+    height: 950px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.carousel-image-two {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%), url('home/carousel_2.jpeg');
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    height: 950px;
+}
+
+.carousel-image-three {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%), url('home/safwa_map.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 950px;
+}
+
+.carousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    top: 70px;
+    left: 50px;
+    right: 50px;
+}
+
+.btn-get-started:hover {
+    background: #fff;
+    color: #18d26e;
+}
+
+#carouselExampleCaptions .container {
+    text-align: center;
+}
+
+#carouselExampleCaptions .carousel-main-title {
+    font-size: 5.0rem;
+    color: white;
+}
+
+#carouselExampleCaptions .carousel-button {
+    font-size: 2.0rem;
+    color: white;
+    font-family: verdana, sans-serif;
+    background-color: rgba(68, 214,44,1);
+}
+
+.main-features-background {
+    background:rgb(40, 40, 43)
+}
+
+.align-items-center {
+    align-items: center !important
+}
+
+.header-transparent {
+    background: transparent !important;
+}
+
+.header-scrolled {
+    transition: all 0.5s;
+    z-index: 997;
+    background: rgb(40, 40, 43) !important;
+    height: 80px;
+}
+
+.home-feature-title::after {
+    content: '';
+    display: block;
+    width: 200px;
+    height: 3px;
+    background: #18d26e;
+    bottom: 0;
+    left: calc(50% - 20px);
+    margin: auto;
+}
+
+.home-button {
+    font-size: 2.0rem;
+    color: white;
+    font-family: verdana, sans-serif;
+    background: rgba(68, 214,44,1);
+    border-radius: 50rem;
+    width:200px;
+    text-align:center;
+    margin:auto;
+}

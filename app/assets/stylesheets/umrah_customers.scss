@@ -23,3 +23,30 @@ table {
   color: red;
 }
 
+.carousel-description,.card-title,.navbar-title-home {
+  font-size: 2.0rem;
+  color: white !important;
+  font-family: verdana, sans-serif;
+  line-height: 1.8;
+  &.card-description {
+    font-size: 1.5rem;
+  }
+  &.nav-link {
+    font-weight: bold;
+  }
+}
+
+.logo {
+  font-size: 34px;
+  margin: 0 0 0 50px;
+  padding-left: 10px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  letter-spacing: 3px;
+  border-left: 4px solid rgb(255, 180, 4);
+  &.nav-link {
+    color: white;
+  }
+}
+
+
