@@ -1,6 +1,6 @@
 <header id="nav-bar-home" class="fixed-top">
   <nav class="navbar navbar-expand-lg header-transparent">
-    <h1 class="nav-link logo" href="#">Umrah Nurani</h1>
+    <a class="nav-link logo" href="#main_features">Umrah Nurani</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -11,21 +11,13 @@
           <a class="nav-link navbar-title-home" href="#">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link navbar-title-home" href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle navbar-title-home" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
+          <a class="nav-link navbar-title-home" href="#umrah-packages">Pakej</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled navbar-title-home" href="#">Disabled</a>
+          <a class="nav-link navbar-title-home" href="#portfolio">Galeri</a>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Log In", user_session_path,method: :get,class:"nav-link navbar-title-home" %>
         </li>
       </ul>
     </div>
@@ -34,1012 +26,180 @@
 
 <body>
 <%= render partial: "home/carousel" %>
+<%= render partial: "home/company_offers" %>
 
-<div id="main_features" class="main-features-background">
-  <div class="container">
-    <div class="row main-features-background ">
-      <div class=" text-white col-lg-4 box main-features-background">
-        <div class="offset-md-1" style="margin:8rem 1rem 4rem 1rem">
-          <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="rgb(255, 180, 4)" class="bi bi-coin" viewBox="0 0 16 16">
-            <path d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932 0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853 0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9H5.5zm2.177-2.166c-.59-.137-.91-.416-.91-.836 0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91 0 .542-.412.914-1.135.982V8.518l.087.02z"/>
-            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-            <path d="M8 13.5a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11zm0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"/>
-          </svg>
-          <h5 class="card-title">Jimat Dan Selesa</h5>
-          <p class="card-description">Pakej harga jimat dengan tiada kos tersembunyi.</p>
-        </div>
-      </div>
-      <!--      rgb(255, 180, 4)-->
 
-      <div class="text-white col-lg-4 box main-features-background">
-        <div class="offset-md-1" style="margin:8rem 1rem 4rem 1rem">
-          <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="rgb(255, 180, 4)" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
-            <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
-          </svg>
-          <h5 class="card-title">Hotel Dekat</h5>
-          <p class="card-description">Selesa dan sesuai untuk Warga Emas & OKU.</p>
-        </div>
-      </div>
-
-      <div class="text-white col-lg-4 box main-features-background">
-        <div class="offset-md-1" style="margin:8rem 1rem 4rem 1rem">
-          <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="rgb(255, 180, 4)" class="bi bi-cup-straw" viewBox="0 0 16 16">
-            <path d="M13.902.334a.5.5 0 0 1-.28.65l-2.254.902-.4 1.927c.376.095.715.215.972.367.228.135.56.396.56.82 0 .046-.004.09-.011.132l-.962 9.068a1.28 1.28 0 0 1-.524.93c-.488.34-1.494.87-3.01.87-1.516 0-2.522-.53-3.01-.87a1.28 1.28 0 0 1-.524-.93L3.51 5.132A.78.78 0 0 1 3.5 5c0-.424.332-.685.56-.82.262-.154.607-.276.99-.372C5.824 3.614 6.867 3.5 8 3.5c.712 0 1.389.045 1.985.127l.464-2.215a.5.5 0 0 1 .303-.356l2.5-1a.5.5 0 0 1 .65.278zM9.768 4.607A13.991 13.991 0 0 0 8 4.5c-1.076 0-2.033.11-2.707.278A3.284 3.284 0 0 0 4.645 5c.146.073.362.15.648.222C5.967 5.39 6.924 5.5 8 5.5c.571 0 1.109-.03 1.588-.085l.18-.808zm.292 1.756C9.445 6.45 8.742 6.5 8 6.5c-1.133 0-2.176-.114-2.95-.308a5.514 5.514 0 0 1-.435-.127l.838 8.03c.013.121.06.186.102.215.357.249 1.168.69 2.438.69 1.27 0 2.081-.441 2.438-.69.042-.029.09-.094.102-.215l.852-8.03a5.517 5.517 0 0 1-.435.127 8.88 8.88 0 0 1-.89.17zM4.467 4.884s.003.002.005.006l-.005-.006zm7.066 0-.005.006c.002-.004.005-.006.005-.006zM11.354 5a3.174 3.174 0 0 0-.604-.21l-.099.445.055-.013c.286-.072.502-.149.648-.222z"/>
-          </svg>
-          <h5 class="card-title">Fullboard</h5>
-          <p class="card-description">Makanan sedap ibadah tenang.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<section id="services">
+<section id="testimoni" class="section-bg">
   <div class="container" data-aos="fade-up">
 
-    <header class="section-header wow fadeInUp home-feature-description" style="text-align:center">
-      <h3 class="home-feature-title" id="">Tawaran Pakej Kami</h3>
-      <p class="home-feature-description">Kami tawarkan pakej umrah yang paling selesa. Lihat janji kami kepada
-        anda:</p>
+    <header class="section-header wow fadeInUp home-feature-description" style="text-align:center" id="umrah-feature">
+      <h3 class="home-feature-title" style="margin-top:120px">Testimoni Jemaah</h3>
+      <p class="home-feature-description">Selami perasaan kesyukuran jemaah umrah bersama kami</p>
     </header>
 
-    <div class="row" style="margin-top:80px">
+    <div id="carousel-testimoni" class="carousel slide carousel-fade" data-ride="carousel">
+      <div class="carousel-inner">
 
-      <div class="col-lg-4 col-md-6 box" data-aos="fade-up" data-aos-delay="100">
-        <div class="col-lg-2">
-          <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="rgb(255, 180, 4)" class="bi bi-hospital" viewBox="0 0 16 16" style="margin-top:25px">
-            <path d="M8.5 5.034v1.1l.953-.55.5.867L9 7l.953.55-.5.866-.953-.55v1.1h-1v-1.1l-.953.55-.5-.866L7 7l-.953-.55.5-.866.953.55v-1.1h1ZM13.25 9a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5ZM13 11.25a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5Zm.25 1.75a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5Zm-11-4a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 3 9.75v-.5A.25.25 0 0 0 2.75 9h-.5Zm0 2a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5ZM2 13.25a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5Z"/>
-            <path d="M5 1a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1a1 1 0 0 1 1 1v4h3a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h3V3a1 1 0 0 1 1-1V1Zm2 14h2v-3H7v3Zm3 0h1V3H5v12h1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3Zm0-14H6v1h4V1Zm2 7v7h3V8h-3Zm-8 7V8H1v7h3Z"/>
-          </svg>
-        </div>
-        <div class="col-lg-10">
-          <h4 class="home-feature-description">Hotel 5 Bintang 50 Meter</h4>
-          <p class="description">Hotel paling selesa paling dekat khas untuk anda. <b>Hotel Safwa</b> di Mekah dan
-            <b>Hotel Royal Nozol</b> Inn di Madinah</p>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-md-6 box" data-aos="fade-up" data-aos-delay="100">
-        <div class="col-lg-2">
-          <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="rgb(255, 180, 4)" class="bi bi-basket3-fill" viewBox="0 0 16 16" style="margin-top:25px">
-            <path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 6h1.717L5.07 1.243a.5.5 0 0 1 .686-.172zM2.468 15.426.943 9h14.114l-1.525 6.426a.75.75 0 0 1-.729.574H3.197a.75.75 0 0 1-.73-.574z"/>
-          </svg>
-        </div>
-        <div class="col-lg-10">
-          <h4 class="home-feature-description">Fullboard Makanan</h4>
-          <p class="description">Takut makanan arab tak kene selera kita? Usah risau, kami uruskan sarapan,makan tengah
-            hari dan makan malam sepanjang anda berada di sana dengan menu <b>masakan melayu</b>.</p>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-md-6 box" data-aos="fade-up" data-aos-delay="100">
-        <div class="col-lg-2">
-          <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="rgb(255, 180, 4)" class="bi bi-bag-heart-fill" viewBox="0 0 16 16" style="margin-top:25px">
-            <path d="M11.5 4v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5ZM8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1Zm0 6.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z"/>
-          </svg>
-        </div>
-        <div class="col-lg-10">
-          <h4 class="home-feature-description">Perlindungan Takaful</h4>
-          <p class="description">Perlindungan dan kad takaful disediakn untuk kemudahan dan keselesaan anda jika berlaku
-            kecemasan.</p>
-        </div>
-      </div>
-
-      <div style="margin-top:50px">
-        <div class="col-lg-4 col-md-6 box" data-aos="fade-up" data-aos-delay="100">
-          <div class="col-lg-2">
-            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="rgb(255, 180, 4)" class="bi bi-bezier2" viewBox="0 0 16 16" style="margin-top:25px">
-              <path fill-rule="evenodd" d="M1 2.5A1.5 1.5 0 0 1 2.5 1h1A1.5 1.5 0 0 1 5 2.5h4.134a1 1 0 1 1 0 1h-2.01c.18.18.34.381.484.605.638.992.892 2.354.892 3.895 0 1.993.257 3.092.713 3.7.356.476.895.721 1.787.784A1.5 1.5 0 0 1 12.5 11h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1a1.5 1.5 0 0 1-1.5-1.5H6.866a1 1 0 1 1 0-1h1.711a2.839 2.839 0 0 1-.165-.2C7.743 11.407 7.5 10.007 7.5 8c0-1.46-.246-2.597-.733-3.355-.39-.605-.952-1-1.767-1.112A1.5 1.5 0 0 1 3.5 5h-1A1.5 1.5 0 0 1 1 3.5v-1zM2.5 2a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zm10 10a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1z"/>
-            </svg>
-          </div>
-          <div class="col-lg-10">
-            <h4 class="home-feature-description">Direct Flight KL <-> Saudi</h4>
-            <p class="description">Letih transit kapal terbang berjam-jam?<br> Kami tawarkan <b>Direct Flight</b> pergi
-              dan
-              balik dengan penerbangan <b>MAS (Malaysia Airlines)</b> atau <b>Saudi Air sahaja</b>. Kekal bertenaga
-              untuk
-              ibadah umrah.</p>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 box" data-aos="fade-up" data-aos-delay="100">
-          <div class="col-lg-2">
-            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="rgb(255, 180, 4)" class="bi bi-book-half" viewBox="0 0 16 16" style="margin-top:25px">
-              <path d="M8.5 2.687c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
-            </svg>
-          </div>
-          <div class="col-lg-10">
-            <h4 class="home-feature-description">Kursus Umrah Percuma</h4>
-            <p class="description">
-              Ibadah umrah sempurna hasil ilmu yang sempurna. Kami pastikan anda betul betul bersedia
-              sebelum berlepas ke sana. Buku rujukan umrah juga disediakan.
-            </p>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 box" data-aos="fade-up" data-aos-delay="100">
-          <div class="col-lg-2">
-            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="rgb(255, 180, 4)" class="bi bi-book-half" viewBox="0 0 16 16">
-              <path fill-rule="evenodd" d="M11.5 1.246c.832-.855 2.913.642 0 2.566-2.913-1.924-.832-3.421 0-2.566ZM9 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm-9 8c0 1 1 1 1 1h10s1 0 1-1-1-4-6-4-6 3-6 4Zm13.5-8.09c1.387-1.425 4.855 1.07 0 4.277-4.854-3.207-1.387-5.702 0-4.276ZM15 2.165c.555-.57 1.942.428 0 1.711-1.942-1.283-.555-2.281 0-1.71Z"/>
-            </svg>
-          </div>
-          <div class="col-lg-10">
-            <h4 class="home-feature-description">Mesra Warga Emas dan OKU</h4>
-            <p class="description">Ingin membawa ibu bapa berkerusi roda? Mutawif dan pasukan kami sentiasa ada bersama
-              anda
-              untuk membantu menguruskan golongan yang memerlukan.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row" style="margin-top:50px">
-      <div class="home-button" style="text-align:center">
-        <a href="#" class="home-button" style="color:white">Testimoni</a>
-      </div>
-      <div class="home-button" style="text-align:center">
-        <a href="#" class="home-button" style="color:white">Lihat Pakej</a>
-      </div>
-    </div>
-  </div>
-
-</section><!-- End Services Section -->
-
-
-<!-- ======= hero Section ======= -->
-<section id="hero">
-  <div class="hero-container">
-    <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
-
-      <ol id="hero-carousel-indicators" class="carousel-indicators"></ol>
-
-      <div class="carousel-inner" role="listbox" style="height:200px">
-
-        <div class="carousel-item active" style="background-image: url(app/assets/theme/assets/img/hero-carousel/1.jpg)">
-          <!--          <div class="carousel-item active carousel-image-one" >-->
-          <div class="carousel-container">
-            <div class="container">
-              <h2 class="animate__animated animate__fadeInDown">We are professional</h2>
-              <p class="animate__animated animate__fadeInUp">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-              <a href="#featured-services" class="btn-get-started scrollto animate__animated animate__fadeInUp">Get
-                Started</a>
+        <div class="d-block w-100 carousel-item active">
+          <div class="carousel-image carousel-standard" style="background:#41B3A3">
+            <div class="carousel-container ">
+              <div class="container col-md-5">
+                <h2 class="animate__animated animate__fadeInDown carousel-main-title">Fadzilah Mohamad</h2>
+                <p class="animate__animated animate__fadeInUp carousel-description"><br>“Alhamdulillah,</br> Terima
+                  kasih PGH. Such a memorable trip. ‘Kids- and elderly-friendly’ i would say. Mutawif bagus. Service
+                  memang tip-top😘.”</p>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="carousel-item" style="background-image: url(app/assets/theme/assets/img/hero-carousel/2.jpg)">
-          <div class="carousel-container">
-            <div class="container">
-              <h2 class="animate__animated animate__fadeInDown">At vero eos et accusamus</h2>
-              <p class="animate__animated animate__fadeInUp">Nam libero tempore, cum soluta nobis est eligendi optio
-                cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est,
-                omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut.</p>
-              <a href="#featured-services" class="btn-get-started scrollto animate__animated animate__fadeInUp">Get
-                Started</a>
+        <div class="carousel-item ">
+          <div class="d-block w-100 carousel-standard" style="background:#41B3A3">
+            <div class="carousel-container ">
+              <div class="container col-md-5">
+                <h2 class="animate__animated animate__fadeInDown carousel-main-title">Nazrie Salleh</h2>
+                <p class="animate__animated animate__fadeInUp carousel-description"><br>“Alhamdulillah,</br>Sangat
+                  sangat puas hati. Terima kasih banyak2 buat Mutawif,perkhidmatan terbaik (5 bintang) serta ahli group
+                  yang sangat baik hati.Terima kasih banyak-banyak.”</p>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="carousel-item" style="background-image: url(app/assets/theme/assets/img/hero-carousel/3.jpg)">
-          <div class="carousel-container">
-            <div class="container">
-              <h2 class="animate__animated animate__fadeInDown">Temporibus autem quibusdam</h2>
-              <p class="animate__animated animate__fadeInUp">Beatae vitae dicta sunt explicabo. Nemo enim ipsam
-                voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui
-                ratione voluptatem sequi nesciunt omnis iste natus error sit voluptatem accusantium.</p>
-              <a href="#featured-services" class="btn-get-started scrollto animate__animated animate__fadeInUp">Get
-                Started</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="carousel-item" style="background-image: url(app/assets/theme/assets/img/hero-carousel/4.jpg)">
-          <div class="carousel-container">
-            <div class="container">
-              <h2 class="animate__animated animate__fadeInDown">Nam libero tempore</h2>
-              <p class="animate__animated animate__fadeInUp">Neque porro quisquam est, qui dolorem ipsum quia dolor sit
-                amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore
-                magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum.</p>
-              <a href="#featured-services" class="btn-get-started scrollto animate__animated animate__fadeInUp">Get
-                Started</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="carousel-item" style="background-image: url(app/assets/theme/assets/img/hero-carousel/5.jpg)">
-          <div class="carousel-container">
-            <div class="container">
-              <h2 class="animate__animated animate__fadeInDown">Magnam aliquam quaerat</h2>
-              <p class="animate__animated animate__fadeInUp">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-              <a href="#featured-services" class="btn-get-started scrollto animate__animated animate__fadeInUp">Get
-                Started</a>
+        <div class="carousel-item">
+          <div class="d-block w-100 carousel-standard" style="background:#41B3A3">
+            <div class="carousel-container ">
+              <div class="container col-md-5">
+                <h2 class="animate__animated animate__fadeInDown carousel-main-title">Khadijah Hasmad</h2>
+                <p class="animate__animated animate__fadeInUp carousel-description">“Mutawif mesra kanak-kanak, itineri
+                  fleksibel mengikut masa kami, Mutawifah yang sangat-sangat terbaik bantu saya dan Mak saya masuk
+                  Raudhah dengan tenang, etc.”</p>
+              </div>
             </div>
           </div>
         </div>
 
       </div>
 
-      <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+      <a class="carousel-control-prev" href="#carousel-testimoni" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
       </a>
 
-      <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+      <a class="carousel-control-next" href="#carousel-testimoni" role="button" data-slide="next">
         <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
       </a>
-
     </div>
   </div>
-</section><!-- End Hero Section -->
+</section>
 
-<main id="main">
+<%= render partial:'home/packages' %>
 
-  <!-- ======= Featured Services Section Section ======= -->
-  <section id="featured-services">
-    <div class="container">
-      <div class="row">
 
-        <div class="col-lg-4 box">
-          <i class="bi bi-briefcase"></i>
-          <h4 class="title"><a href="">Lorem Ipsum Delino</a></h4>
-          <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
-            occaecati cupiditate non provident</p>
+<section id="portfolio" class="section-bg">
+  <div class="container" data-aos="fade-up">
+
+    <header class="section-header wow fadeInUp home-feature-description" style="text-align:center" id="umrah-feature">
+      <h3 class="home-feature-title" style="margin-top:120px">Galeri Jemaah</h3>
+    </header>
+
+    <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="margin:10px 0 10px">
+        <div class="portfolio-wrap">
+          <figure>
+            <%= image_tag "home/screenshot_gallery.png",style:"height:300px;width:100%" %>
+          </figure>
         </div>
+      </div>
 
-        <div class="col-lg-4 box box-bg">
-          <i class="bi bi-card-checklist"></i>
-          <h4 class="title"><a href="">Dolor Sitema</a></h4>
-          <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat tarad limino ata</p>
+      <div class="col-lg-4 col-md-6 portfolio-item filter-web" style="margin:10px 0 10px">
+        <div class="portfolio-wrap">
+          <figure>
+            <%= image_tag "home/safwa.png",style:"height:300px;width:100%" %>
+          </figure>
         </div>
+      </div>
 
-        <div class="col-lg-4 box">
-          <i class="bi bi-binoculars"></i>
-          <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-          <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-            nulla pariatur</p>
+      <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="margin:10px 0 10px">
+        <div class="portfolio-wrap">
+          <figure>
+            <%= image_tag "home/mutawwif.jpeg",style:"height:300px;width:100%" %>
+          </figure>
         </div>
+      </div>
 
+      <div class="col-lg-4 col-md-6 portfolio-item filter-card" style="margin:10px 0 10px">
+        <div class="portfolio-wrap">
+          <figure>
+            <%= image_tag "home/fb.jpeg", style:"height:300px;width:100%" %>
+          </figure>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-web" style="margin:10px 0 10px">
+        <div class="portfolio-wrap">
+          <figure>
+            <%= image_tag "home/bas_mekah.jpeg", style:"height:300px;width:100%" %>
+          </figure>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="margin:10px 0 10px">
+        <div class="portfolio-wrap">
+          <figure>
+            <%= image_tag "home/kaabah.jpeg", style:"height:300px;width:100%" %>
+          </figure>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-card" style="margin:10px 0 10px">
+        <div class="portfolio-wrap">
+          <figure>
+            <%= image_tag "home/makan_hotel.jpeg", style:"height:300px;width:100%" %>
+          </figure>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-card" style="margin:10px 0 10px">
+        <div class="portfolio-wrap">
+          <figure>
+            <%= image_tag "home/makanan_hotel.jpeg", style:"height:300px;width:100%" %>
+          </figure>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-web" style="margin:10px 0 10px">
+        <div class="portfolio-wrap">
+          <figure>
+            <%= image_tag "home/safwa_king.jpeg", style:"height:300px;width:100%" %>
+          </figure>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-web" style="margin:10px 0 10px">
+        <div class="portfolio-wrap">
+          <figure>
+            <%= image_tag "home/wheelchair.jpeg", style:"height:300px;width:100%" %>
+          </figure>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-web" style="margin:10px 0 10px">
+        <div class="portfolio-wrap">
+          <figure>
+            <%= image_tag "home/safwa_single.jpeg", style:"height:300px;width:100%" %>
+          </figure>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-web" style="margin:10px 0 10px">
+        <div class="portfolio-wrap">
+          <figure>
+            <%= image_tag "home/makanan_melayu.jpeg", style:"height:300px;width:100%" %>
+          </figure>
+        </div>
       </div>
     </div>
-  </section><!-- End Featured Services Section -->
 
-  <!-- ======= About Us Section ======= -->
-  <section id="about">
-    <div class="container" data-aos="fade-up">
-
-      <header class="section-header">
-        <h3>About Us</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat.</p>
-      </header>
-
-      <div class="row about-cols">
-
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-          <div class="about-col">
-            <div class="img">
-              <img src="assets/img/about-mission.jpg" alt="" class="img-fluid">
-              <div class="icon"><i class="bi bi-bar-chart"></i></div>
-            </div>
-            <h2 class="title"><a href="#">Our Mission</a></h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </p>
-          </div>
-        </div>
-
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-          <div class="about-col">
-            <div class="img">
-              <img src="assets/img/about-plan.jpg" alt="" class="img-fluid">
-              <div class="icon"><i class="bi bi-brightness-high"></i></div>
-            </div>
-            <h2 class="title"><a href="#">Our Plan</a></h2>
-            <p>
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem doloremque laudantium, totam rem aperiam,
-              eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-            </p>
-          </div>
-        </div>
-
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-          <div class="about-col">
-            <div class="img">
-              <img src="assets/img/about-vision.jpg" alt="" class="img-fluid">
-              <div class="icon"><i class="bi bi-calendar4-week"></i></div>
-            </div>
-            <h2 class="title"><a href="#">Our Vision</a></h2>
-            <p>
-              Nemo enim ipsam voluptatem quia voluptas sit aut odit aut fugit, sed quia magni dolores eos qui ratione
-              voluptatem sequi nesciunt Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.
-            </p>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section><!-- End About Us Section -->
-
-  <!-- ======= Services Section ======= -->
-  <section id="services">
-    <div class="container" data-aos="fade-up">
-
-      <header class="section-header wow fadeInUp">
-        <h3>Services</h3>
-        <p>Laudem latine persequeris id sed, ex fabulas delectus quo. No vel partiendo abhorreant vituperatoribus, ad
-          pro quaestio laboramus. Ei ubique vivendum pro. At ius nisl accusam lorenta zanos paradigno tridexa
-          panatarel.</p>
-      </header>
-
-      <div class="row">
-
-        <div class="col-lg-4 col-md-6 box" data-aos="fade-up" data-aos-delay="100">
-          <div class="icon"><i class="bi bi-briefcase"></i></div>
-          <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-          <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
-            occaecati cupiditate non provident</p>
-        </div>
-        <div class="col-lg-4 col-md-6 box" data-aos="fade-up" data-aos-delay="200">
-          <div class="icon"><i class="bi bi-card-checklist"></i></div>
-          <h4 class="title"><a href="">Dolor Sitema</a></h4>
-          <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat tarad limino ata</p>
-        </div>
-        <div class="col-lg-4 col-md-6 box" data-aos="fade-up" data-aos-delay="300">
-          <div class="icon"><i class="bi bi-bar-chart"></i></div>
-          <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-          <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-            nulla pariatur</p>
-        </div>
-        <div class="col-lg-4 col-md-6 box" data-aos="fade-up" data-aos-delay="200">
-          <div class="icon"><i class="bi bi-binoculars"></i></div>
-          <h4 class="title"><a href="">Magni Dolores</a></h4>
-          <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-            mollit anim id est laborum</p>
-        </div>
-        <div class="col-lg-4 col-md-6 box" data-aos="fade-up" data-aos-delay="300">
-          <div class="icon"><i class="bi bi-brightness-high"></i></div>
-          <h4 class="title"><a href="">Nemo Enim</a></h4>
-          <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
-            voluptatum deleniti atque</p>
-        </div>
-        <div class="col-lg-4 col-md-6 box" data-aos="fade-up" data-aos-delay="400">
-          <div class="icon"><i class="bi bi-calendar4-week"></i></div>
-          <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
-          <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum
-            soluta nobis est eligendi</p>
-        </div>
-
-      </div>
-
-    </div>
-  </section><!-- End Services Section -->
-
-  <!-- ======= Call To Action Section ======= -->
-  <section id="call-to-action">
-    <div class="container text-center" data-aos="zoom-in">
-      <h3>Call To Action</h3>
-      <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-        laborum.</p>
-      <a class="cta-btn" href="#">Call To Action</a>
-    </div>
-  </section><!-- End Call To Action Section -->
-
-  <!-- ======= Skills Section ======= -->
-  <section id="skills">
-    <div class="container" data-aos="fade-up">
-
-      <header class="section-header">
-        <h3>Our Skills</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</p>
-      </header>
-
-      <div class="skills-content">
-
-        <div class="progress">
-          <div class="progress-bar bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-            <span class="skill">HTML <i class="val">100%</i></span>
-          </div>
-        </div>
-
-        <div class="progress">
-          <div class="progress-bar bg-info" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-            <span class="skill">CSS <i class="val">90%</i></span>
-          </div>
-        </div>
-
-        <div class="progress">
-          <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-            <span class="skill">JavaScript <i class="val">75%</i></span>
-          </div>
-        </div>
-
-        <div class="progress">
-          <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
-            <span class="skill">Photoshop <i class="val">55%</i></span>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section><!-- End Skills Section -->
-
-  <!-- ======= Facts Section ======= -->
-  <section id="facts">
-    <div class="container" data-aos="fade-up">
-
-      <header class="section-header">
-        <h3>Facts</h3>
-        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
-      </header>
-
-      <div class="row counters">
-
-        <div class="col-lg-3 col-6 text-center">
-          <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
-          <p>Clients</p>
-        </div>
-
-        <div class="col-lg-3 col-6 text-center">
-          <span data-purecounter-start="0" data-purecounter-end="421" data-purecounter-duration="1" class="purecounter"></span>
-          <p>Projects</p>
-        </div>
-
-        <div class="col-lg-3 col-6 text-center">
-          <span data-purecounter-start="0" data-purecounter-end="1364" data-purecounter-duration="1" class="purecounter"></span>
-          <p>Hours Of Support</p>
-        </div>
-
-        <div class="col-lg-3 col-6 text-center">
-          <span data-purecounter-start="0" data-purecounter-end="38" data-purecounter-duration="1" class="purecounter"></span>
-          <p>Hard Workers</p>
-        </div>
-
-      </div>
-
-      <div class="facts-img">
-        <img src="assets/img/facts-img.png" alt="" class="img-fluid">
-      </div>
-
-    </div>
-  </section><!-- End Facts Section -->
-
-  <!-- ======= Portfolio Section ======= -->
-  <section id="portfolio" class="section-bg">
-    <div class="container" data-aos="fade-up">
-
-      <header class="section-header">
-        <h3 class="section-title">Our Portfolio</h3>
-      </header>
-
-      <div class="row" data-aos="fade-up" data-aos-delay="100">
-        <div class=" col-lg-12">
-          <ul id="portfolio-flters">
-            <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-app">App</li>
-            <li data-filter=".filter-card">Card</li>
-            <li data-filter=".filter-web">Web</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <div class="portfolio-wrap">
-            <figure>
-              <img src="app/assets/theme/assets/img/portfolio/app1.jpg" class="img-fluid" alt="">
-              <a href="app/assets/theme/assets/img/portfolio/app1.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview"><i class="bi bi-plus"></i></a>
-              <a href="portfolio-details.html" class="link-details" title="More Details"><i class="bi bi-link"></i></a>
-            </figure>
-
-            <div class="portfolio-info">
-              <h4><a href="portfolio-details.html">App 1</a></h4>
-              <p>App</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-          <div class="portfolio-wrap">
-            <figure>
-              <img src="app/assets/theme/assets/img/portfolio/web3.jpg" class="img-fluid" alt="">
-              <a href="app/assets/theme/assets/img/portfolio/web3.jpg" class="link-preview portfolio-lightbox" data-gallery="portfolioGallery" title="Web 3"><i class="bi bi-plus"></i></a>
-              <a href="portfolio-details.html" class="link-details" title="More Details"><i class="bi bi-link"></i></a>
-            </figure>
-
-            <div class="portfolio-info">
-              <h4><a href="portfolio-details.html">Web 3</a></h4>
-              <p>Web</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <div class="portfolio-wrap">
-            <figure>
-              <img src="app/assets/theme/assets/img/portfolio/app2.jpg" class="img-fluid" alt="">
-              <a href="app/assets/theme/assets/img/portfolio/app2.jpg" class="link-preview portfolio-lightbox" data-gallery="portfolioGallery" title="App 2"><i class="bi bi-plus"></i></a>
-              <a href="portfolio-details.html" class="link-details" title="More Details"><i class="bi bi-link"></i></a>
-            </figure>
-
-            <div class="portfolio-info">
-              <h4><a href="portfolio-details.html">App 2</a></h4>
-              <p>App</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-          <div class="portfolio-wrap">
-            <figure>
-              <img src="app/assets/theme/assets/img/portfolio/card2.jpg" class="img-fluid" alt="">
-              <a href="app/assets/theme/assets/img/portfolio/card2.jpg" class="link-preview portfolio-lightbox" data-gallery="portfolioGallery" title="Card 2"><i class="bi bi-plus"></i></a>
-              <a href="portfolio-details.html" class="link-details" title="More Details"><i class="bi bi-link"></i></a>
-            </figure>
-
-            <div class="portfolio-info">
-              <h4><a href="portfolio-details.html">Card 2</a></h4>
-              <p>Card</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-          <div class="portfolio-wrap">
-            <figure>
-              <img src="app/assets/theme/assets/img/portfolio/web2.jpg" class="img-fluid" alt="">
-              <a href="app/assets/theme/assets/img/portfolio/web2.jpg" class="link-preview portfolio-lightbox" data-gallery="portfolioGallery" title="Web 2"><i class="bi bi-plus"></i></a>
-              <a href="portfolio-details.html" class="link-details" title="More Details"><i class="bi bi-link"></i></a>
-            </figure>
-
-            <div class="portfolio-info">
-              <h4><a href="portfolio-details.html">Web 2</a></h4>
-              <p>Web</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <div class="portfolio-wrap">
-            <figure>
-              <img src="app/assets/theme/assets/img/portfolio/app3.jpg" class="img-fluid" alt="">
-              <a href="app/assets/theme/assets/img/portfolio/app3.jpg" class="link-preview portfolio-lightbox" data-gallery="portfolioGallery" title="App 3"><i class="bi bi-plus"></i></a>
-              <a href="portfolio-details.html" class="link-details" title="More Details"><i class="bi bi-link"></i></a>
-            </figure>
-
-            <div class="portfolio-info">
-              <h4><a href="portfolio-details.html">App 3</a></h4>
-              <p>App</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-          <div class="portfolio-wrap">
-            <figure>
-              <img src="app/assets/theme/assets/img/portfolio/card1.jpg" class="img-fluid" alt="">
-              <a href="app/assets/theme/assets/img/portfolio/card1.jpg" class="link-preview portfolio-lightbox" data-gallery="portfolioGallery" title="Card 1"><i class="bi bi-plus"></i></a>
-              <a href="portfolio-details.html" class="link-details" title="More Details"><i class="bi bi-link"></i></a>
-            </figure>
-
-            <div class="portfolio-info">
-              <h4><a href="portfolio-details.html">Card 1</a></h4>
-              <p>Card</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-          <div class="portfolio-wrap">
-            <figure>
-              <img src="app/assets/theme/assets/img/portfolio/card3.jpg" class="img-fluid" alt="">
-              <a href="app/assets/theme/assets/img/portfolio/card3.jpg" class="link-preview portfolio-lightbox" data-gallery="portfolioGallery" title="Card 3"><i class="bi bi-plus"></i></a>
-              <a href="portfolio-details.html" class="link-details" title="More Details"><i class="bi bi-link"></i></a>
-            </figure>
-
-            <div class="portfolio-info">
-              <h4><a href="portfolio-details.html">Card 3</a></h4>
-              <p>Card</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-          <div class="portfolio-wrap">
-            <figure>
-              <img src="app/assets/theme/assets/img/portfolio/web1.jpg" class="img-fluid" alt="">
-              <a href="app/assets/theme/assets/img/portfolio/web1.jpg" class="link-preview portfolio-lightbox" data-gallery="portfolioGallery" title="Web 1"><i class="bi bi-plus"></i></a>
-              <a href="portfolio-details.html" class="link-details" title="More Details"><i class="bi bi-link"></i></a>
-            </figure>
-
-            <div class="portfolio-info">
-              <h4><a href="portfolio-details.html">Web 1</a></h4>
-              <p>Web</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section><!-- End Portfolio Section -->
-
-  <!-- ======= Our Clients Section ======= -->
-  <section id="clients">
-    <div class="container" data-aos="zoom-in">
-
-      <header class="section-header">
-        <h3>Our Clients</h3>
-      </header>
-
-      <div class="clients-slider swiper">
-        <div class="swiper-wrapper align-items-center">
-          <div class="swiper-slide">
-            <img src="app/assets/theme/assets/img/clients/client-1.png" class="img-fluid" alt=""></div>
-          <div class="swiper-slide">
-            <img src="app/assets/theme/assets/img/clients/client-2.png" class="img-fluid" alt=""></div>
-          <div class="swiper-slide">
-            <img src="app/assets/theme/assets/img/clients/client-3.png" class="img-fluid" alt=""></div>
-          <div class="swiper-slide">
-            <img src="app/assets/theme/assets/img/clients/client-4.png" class="img-fluid" alt=""></div>
-          <div class="swiper-slide">
-            <img src="app/assets/theme/assets/img/clients/client-5.png" class="img-fluid" alt=""></div>
-          <div class="swiper-slide">
-            <img src="app/assets/theme/assets/img/clients/client-6.png" class="img-fluid" alt=""></div>
-          <div class="swiper-slide">
-            <img src="app/assets/theme/assets/img/clients/client-7.png" class="img-fluid" alt=""></div>
-          <div class="swiper-slide">
-            <img src="app/assets/theme/assets/img/clients/client-8.png" class="img-fluid" alt=""></div>
-        </div>
-        <div class="swiper-pagination"></div>
-      </div>
-
-    </div>
-  </section><!-- End Our Clients Section -->
-
-  <!-- ======= Testimonials Section ======= -->
-  <section id="testimonials" class="section-bg">
-    <div class="container" data-aos="fade-up">
-
-      <header class="section-header">
-        <h3>Testimonials</h3>
-      </header>
-
-      <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
-        <div class="swiper-wrapper">
-
-          <div class="swiper-slide">
-            <div class="testimonial-item">
-              <img src="app/assets/theme/assets/img/testimonial-1.jpg" class="testimonial-img" alt="">
-              <h3>Saul Goodman</h3>
-              <h4>Ceo &amp; Founder</h4>
-              <p>
-                <img src="app/assets/theme/assets/img/quote-sign-left.png" class="quote-sign-left" alt="">
-                Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium
-                quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-                <img src="app/assets/theme/assets/img/quote-sign-right.png" class="quote-sign-right" alt="">
-              </p>
-            </div>
-          </div><!-- End testimonial item -->
-
-          <div class="swiper-slide">
-            <div class="testimonial-item">
-              <img src="app/assets/theme/assets/img/testimonial-2.jpg" class="testimonial-img" alt="">
-              <h3>Sara Wilsson</h3>
-              <h4>Designer</h4>
-              <p>
-                <img src="app/assets/theme/assets/img/quote-sign-left.png" class="quote-sign-left" alt="">
-                Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis
-                quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-                <img src="app/assets/theme/assets/img/quote-sign-right.png" class="quote-sign-right" alt="">
-              </p>
-            </div>
-          </div><!-- End testimonial item -->
-
-          <div class="swiper-slide">
-            <div class="testimonial-item">
-              <img src="app/assets/theme/ssets/img/testimonial-3.jpg" class="testimonial-img" alt="">
-              <h3>Jena Karlis</h3>
-              <h4>Store Owner</h4>
-              <p>
-                <img src="app/assets/theme/assets/img/quote-sign-left.png" class="quote-sign-left" alt="">
-                Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor
-                labore quem eram duis noster aute amet eram fore quis sint minim.
-                <img src="app/assets/theme/assets/img/quote-sign-right.png" class="quote-sign-right" alt="">
-              </p>
-            </div>
-          </div><!-- End testimonial item -->
-
-          <div class="swiper-slide">
-            <div class="testimonial-item">
-              <img src="app/assets/theme/assets/img/testimonial-4.jpg" class="testimonial-img" alt="">
-              <h3>Matt Brandon</h3>
-              <h4>Freelancer</h4>
-              <p>
-                <img src="app/assets/theme/assets/img/quote-sign-left.png" class="quote-sign-left" alt="">
-                Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim
-                dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-                <img src="assets/img/quote-sign-right.png" class="quote-sign-right" alt="">
-              </p>
-            </div>
-          </div><!-- End testimonial item -->
-
-          <div class="swiper-slide">
-            <div class="testimonial-item">
-              <img src="app/assets/theme/assets/img/testimonial-5.jpg" class="testimonial-img" alt="">
-              <h3>John Larson</h3>
-              <h4>Entrepreneur</h4>
-              <p>
-                <img src="app/assets/theme/assets/img/quote-sign-left.png" class="quote-sign-left" alt="">
-                Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa
-                labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-                <img src="app/assets/theme/assets/img/quote-sign-right.png" class="quote-sign-right" alt="">
-              </p>
-            </div>
-          </div><!-- End testimonial item -->
-
-        </div>
-        <div class="swiper-pagination"></div>
-      </div>
-
-    </div>
-  </section><!-- End Testimonials Section -->
-
-  <!-- ======= Team Section ======= -->
-  <section id="team">
-    <div class="container" data-aos="fade-up">
-      <div class="section-header">
-        <h3>Team</h3>
-        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
-      </div>
-
-      <div class="row">
-
-        <div class="col-lg-3 col-md-6">
-          <div class="member" data-aos="fade-up" data-aos-delay="100">
-            <img src="app/assets/theme/assets/img/team-1.jpg" class="img-fluid" alt="">
-            <div class="member-info">
-              <div class="member-info-content">
-                <h4>Walter White</h4>
-                <span>Chief Executive Officer</span>
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6">
-          <div class="member" data-aos="fade-up" data-aos-delay="200">
-            <img src="app/assets/theme/assets/img/team-2.jpg" class="img-fluid" alt="">
-            <div class="member-info">
-              <div class="member-info-content">
-                <h4>Sarah Jhonson</h4>
-                <span>Product Manager</span>
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6">
-          <div class="member" data-aos="fade-up" data-aos-delay="300">
-            <img src="app/assets/theme/assets/img/team-3.jpg" class="img-fluid" alt="">
-            <div class="member-info">
-              <div class="member-info-content">
-                <h4>William Anderson</h4>
-                <span>CTO</span>
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6">
-          <div class="member" data-aos="fade-up" data-aos-delay="400">
-            <img src="app/assets/theme/assets/img/team-4.jpg" class="img-fluid" alt="">
-            <div class="member-info">
-              <div class="member-info-content">
-                <h4>Amanda Jepson</h4>
-                <span>Accountant</span>
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section><!-- End Team Section -->
-
-  <!-- ======= Contact Section ======= -->
-  <section id="contact" class="section-bg">
-    <div class="container" data-aos="fade-up">
-
-      <div class="section-header">
-        <h3>Contact Us</h3>
-        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
-      </div>
-
-      <div class="row contact-info">
-
-        <div class="col-md-4">
-          <div class="contact-address">
-            <i class="bi bi-geo-alt"></i>
-            <h3>Address</h3>
-            <address>A108 Adam Street, NY 535022, USA</address>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="contact-phone">
-            <i class="bi bi-phone"></i>
-            <h3>Phone Number</h3>
-            <p><a href="tel:+155895548855">+1 5589 55488 55</a></p>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="contact-email">
-            <i class="bi bi-envelope"></i>
-            <h3>Email</h3>
-            <p><a href="mailto:info@example.com">info@example.com</a></p>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="form">
-        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-          <div class="row">
-            <div class="form-group col-md-6">
-              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-            </div>
-            <div class="form-group col-md-6">
-              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
-            </div>
-          </div>
-          <div class="form-group">
-            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-          </div>
-          <div class="form-group">
-            <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-          </div>
-          <div class="my-3">
-            <div class="loading">Loading</div>
-            <div class="error-message"></div>
-            <div class="sent-message">Your message has been sent. Thank you!</div>
-          </div>
-          <div class="text-center">
-            <button type="submit">Send Message</button>
-          </div>
-        </form>
-      </div>
-
-    </div>
-  </section><!-- End Contact Section -->
-
-</main><!-- End #main -->
-
-<!-- ======= Footer ======= -->
-<footer id="footer">
-  <div class="footer-top">
-    <div class="container">
-      <div class="row">
-
-        <div class="col-lg-3 col-md-6 footer-info">
-          <h3>BizPage</h3>
-          <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta
-            donna mare fermentum iaculis eu non diam phasellus. Scelerisque felis imperdiet proin fermentum leo. Amet
-            volutpat consequat mauris nunc congue.</p>
-        </div>
-
-        <div class="col-lg-3 col-md-6 footer-links">
-          <h4>Useful Links</h4>
-          <ul>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Privacy policy</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-3 col-md-6 footer-contact">
-          <h4>Contact Us</h4>
-          <p>
-            A108 Adam Street <br>
-            New York, NY 535022<br>
-            United States <br>
-            <strong>Phone:</strong> +1 5589 55488 55<br>
-            <strong>Email:</strong> info@example.com<br>
-          </p>
-
-          <div class="social-links">
-            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-          </div>
-
-        </div>
-
-        <div class="col-lg-3 col-md-6 footer-newsletter">
-          <h4>Our Newsletter</h4>
-          <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna veniam enim veniam illum dolore legam
-            minim quorum culpa amet magna export quem marada parida nodela caramase seza.</p>
-          <form action="" method="post">
-            <input type="email" name="email"><input type="submit" value="Subscribe">
-          </form>
-        </div>
-
-      </div>
-    </div>
   </div>
-
-  <div class="container">
-    <div class="copyright">
-      &copy; Copyright <strong>BizPage</strong>. All Rights Reserved
-    </div>
-    <div class="credits">
-      <!--
-      All the links in the footer should remain intact.
-      You can delete the links only if you purchased the pro version.
-      Licensing information: https://bootstrapmade.com/license/
-      Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=BizPage
-    -->
-      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-    </div>
-  </div>
-</footer><!-- End Footer -->
-
-<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-<!-- Uncomment below i you want to use a preloader -->
-<!-- <div id="preloader"></div> -->
-
-<!-- Vendor JS Files -->
-<script src="app/assets/theme/assets/vendor/waypoints/noframework.waypoints.js"></script>
-<script src="app/assets/theme/assets/vendor/purecounter/purecounter.js"></script>
-<script src="app/assets/theme/assets/vendor/aos/aos.js"></script>
-<script src="app/assets/theme/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="app/assets/theme/assets/vendor/glightbox/js/glightbox.min.js"></script>
-<script src="app/assets/theme/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-<script src="app/assets/theme/assets/vendor/swiper/swiper-bundle.min.js"></script>
-<script src="app/assets/theme/assets/vendor/waypoints/noframework.waypoints.js"></script>
-<script src="app/assets/theme/assets/vendor/php-email-form/validate.js"></script>
-
-<!-- Template Main JS File -->
-<script src="app/javascript/front_end/main.js" rel="javascript"></script>
-
-</body>
+</section>

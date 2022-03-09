@@ -1,7 +1,21 @@
-<div class="col-md-2">
-  <%= render 'layouts/sidebar' %>
+<div>
+  <%= render partial:"layouts/navbar" %>
+  <div class="row" style="margin-top:100px">
+    <div class="col-md-2" style="margin-left:50px">
+      <%= render 'layouts/sidebar' %>
+    </div>
+    <div style="font-size:24px">
+      <h1 style="font-size:24px">Welcome to admin page</h1>
+      <br>
+      <span style="font-size:20px">Email: <%= current_user.email %></span><br>
+      <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+    </div>
+  </div>
 </div>
-<h1>Welcome to admin page</h1>
-<%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+
+
+
+
+
 
 

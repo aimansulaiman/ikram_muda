@@ -1,55 +1,40 @@
-<div>
-  <ul class="navbar-nav navbar-nav-lg nav-tabs ">
+<div style="height:100%">
+  <ul class="navbar-nav navbar-nav-lg nav-tabs navbar-bordered " style=" border-width: .0625rem .0625rem .0625rem 0;
+    border-style: solid;
+    border-color: #e7eaf3;
+    height:950px;
+    width:200px;"
+
+  >
     <!-- Dashboards -->
-    <li class="navbar-vertical-aside-has-menu dropdown dropright">
+    <li class="navbar-vertical-aside-has-menu dropdown dropright" >
       <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle active" id="sidebarDropdown" role="button" href="#" data-toggle="dropdown" aria-haspopup="true" title="Dashboards" aria-expanded="false">
         <i class="tio-home-vs-1-outlined nav-icon"></i>
-        <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Hello</span>
+        <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate" style="font-size:20px">TEMU TRAVEL</span>
       </a>
-
-
-      <div class="dropdown-menu">
-        <ul class="js-navbar-vertical-aside-submenu nav nav-sub ">
-
-          <li class="nav-item dropdown-item">
-            <a class="nav-link  " href="./index.html" title="Default">
-              <span class="tio-circle nav-indicator-icon"></span>
-              <span class="text-truncate">Default</span>
-            </a>
-          </li>
-
-          <li class="nav-item dropdown-item ">
-            <a class="nav-link active" href="./dashboard-alternative.html" title="Alternative">
-              <span class="tio-circle nav-indicator-icon"></span>
-              <span class="text-truncate">Alternative</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-
     </li>
     <!-- End Dashboards -->
 
     <li class="nav-item">
-      <small class="nav-subtitle" title="Pages">Umrah</small>
+      <small class="nav-subtitle" title="Pages" style="font-size:18px;margin-top:5px">Umrah</small>
     </li>
 
-    <li class="navbar-vertical-aside-has-menu dropdown dropright">
+    <li class="navbar-vertical-aside-has-menu dropdown dropright" >
 
       <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle" href="#" title="Pakej" role="button" data-toggle="dropdown">
-        <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Umrah Customer</span>
+        <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate" style="font-size:15px;margin-top:5px">Umrah Customer</span>
       </a>
 
       <div class="dropdown-menu">
         <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
 
           <li class="nav-item dropdown-item">
-            <%= link_to "Umrah Customer", umrah_customers_path, class: "nav-link", title: "View customers list" %>
+            <%= link_to "Umrah Customer", umrah_customers_path, class: "nav-link", title: "View customers list",style:"font-size:15px;margin-top:5px" %>
           </li>
 
 
           <li class="nav-item dropdown-item">
-            <%= link_to "New Customer", new_umrah_customer_path, class: "nav-link", title: "Register new customer" %>
+            <%= link_to "New Customer", new_umrah_customer_path, class: "nav-link", title: "Register new customer",style:"font-size:15px;margin-top:5px" %>
           </li>
 
         </ul>
@@ -60,16 +45,16 @@
     <li class="navbar-vertical-aside-has-menu dropdown dropright">
 
       <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle" href="#" title="Pakej" role="button" data-toggle="dropdown">
-        <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Packages</span>
+        <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate" style="font-size:15px;margin-top:5px">Packages</span>
       </a>
 
       <div class="dropdown-menu">
         <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
           <li class="nav-item dropdown-item">
-            <%= link_to "Packages", umrah_packages_path, class:"nav-link", title:"View package list" %>
+            <%= link_to "Packages", umrah_packages_path, class:"nav-link", title:"View package list",style:"font-size:15px;margin-top:5px" %>
           </li>
           <li class="nav-item dropdown-item">
-            <%= link_to "Create new package", new_umrah_package_path, class:"nav-link", title:"Create new package" %>
+            <%= link_to "Create new package", new_umrah_package_path, class:"nav-link", title:"Create new package",style:"font-size:15px;margin-top:5px" %>
           </li>
         </ul>
       </div>

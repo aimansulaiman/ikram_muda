@@ -1,6 +1,16 @@
-<p id="notice"><%= notice %></p>
+<div>
+  <%= render partial:"layouts/navbar" %>
+  <div class="row" style="margin-top:100px">
+    <div class="col-md-2" style="margin-left:50px">
+      <%= render 'layouts/sidebar' %>
+    </div>
+    <div class="col-md-8">
+      <p id="notice"><%= notice %></p>
+      <h1 class="admin-title">View Customer Details</h1>
+      <%= link_to 'Edit', edit_umrah_customer_path(@umrah_customer), class:"nav-admin-option" %> |
+      <%= link_to 'Back', umrah_customers_path, class:"nav-admin-option" %>
 
-<%= link_to 'Edit', edit_umrah_customer_path(@umrah_customer) %> |
-<%= link_to 'Back', umrah_customers_path %>
-
-<%= render partial: 'umrah_customers/common/customer_form', locals: {is_display_only: true} %>
+      <%= render partial: 'umrah_customers/common/customer_form', locals: {is_display_only: true} %>
+    </div>
+  </div>
+</div>

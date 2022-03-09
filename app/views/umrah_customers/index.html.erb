@@ -1,41 +1,45 @@
-<div class="col-md-2">
-  <%= render 'layouts/sidebar' %>
+<div>
+  <%= render partial: "layouts/navbar" %>
+  <div class="row" style="margin-top:100px">
+    <div class="col-md-2" style="margin-left:50px">
+      <%= render 'layouts/sidebar' %>
+    </div>
+    <div class="col-md-8">
+      <p id="notice"><%= notice %></p>
+      <h1 class="admin-title">Umrah Customers</h1>
+      <div class="container">
+        <table class="table col-sm-10 align-self-center">
+          <thead class="thead-dark text-center">
+          <tr>
+            <th scope="col">No</th>
+            <th scope="col">Customer Name</th>
+            <th scope="col">Departure Date</th>
+            <th scope="col">Return Date</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+          </tr>
+          </thead>
+          <tbody>
+          <% @umrah_customers.each do |customer| %>
+            <tr>
+              <th scope="row" class="counterCell"></th>
+              <td><%= customer.customer_name %></td>
+              <td class="text-center"><%= customer.flight_outbound_detail.flight_departure_date_from_kl %></td>
+              <td class="text-center"><%= customer.flight_inbound_detail.flight_departure_date_from_saudi %></td>
+              <td>
+                <%= link_to "View Detail", umrah_customer_path(customer.id), class: "btn-sm btn-primary primary_button_text text-white", style: "font-size:12px" %>
+              </td>
+              <td>
+                <%= link_to "Delete Customer", umrah_customer_path(customer.id), method: :delete, class: "btn-sm btn-primary primary_button_text text-white", style: "font-size:12px" %>
+              </td>
+
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+      </div>
+      <br>
+      <%= link_to 'New Umrah Customer', new_umrah_customer_path, class: "btn btn-primary primary_button_text text-white", style: "font-size:12px" %>
+    </div>
+  </div>
 </div>
-<p id="notice"><%= notice %></p>
-
-<h1>Umrah Customers</h1>
-</table>
-<div class="container">
-  <table class="table col-sm-10 align-self-center  ">
-    <thead class="thead-dark text-center ">
-    <tr>
-      <th scope="col">No</th>
-      <th scope="col">Customer Name</th>
-      <th scope="col">Departure Date</th>
-      <th scope="col">Return Date</th>
-      <th scope="col"></th>
-      <th scope="col"></th>
-    </tr>
-    </thead>
-    <tbody>
-    <% @umrah_customers.each do |customer| %>
-      <tr>
-        <th scope="row" class="counterCell"></th>
-        <td><%= customer.customer_name %></td>
-        <td class="text-center"><%= customer.flight_outbound_detail.flight_departure_date_from_kl %></td>
-        <td class="text-center"><%= customer.flight_inbound_detail.flight_departure_date_from_saudi %></td>
-        <td>
-          <%= link_to "View Detail", umrah_customer_path(customer.id), class:"btn btn-primary btn-sm primary_button_text text-white"%>
-        </td>
-        <td>
-          <%= link_to "Delete Customer", umrah_customer_path(customer.id), method: :delete, class:"btn btn-primary btn-sm primary_button_text text-white" %>
-        </td>
-
-      </tr>
-    <% end %>
-    </tbody>
-  </table>
-</div>
-<br>
-
-<%= link_to 'New Umrah Customer', new_umrah_customer_path, class:"btn btn-primary btn-sm primary_button_text text-white" %>

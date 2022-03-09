@@ -1,2 +1,17 @@
-<h1> Create New Customer here</h1>
-<%= render partial: "umrah_packages/common/package_form", locals: { disabled: false } %>
+
+
+<div>
+  <%= render partial:"layouts/navbar" %>
+  <div class="row" style="margin-top:100px">
+    <div class="col-md-2" style="margin-left:50px">
+      <%= render 'layouts/sidebar' %>
+    </div>
+    <div class="col-md-8">
+      <p id="notice"><%= notice %></p>
+      <h1 class="admin-title">Umrah Packages</h1>
+      <br>
+      <h1> Create New Customer here</h1>
+      <%= render partial: "umrah_packages/common/package_form", locals: { disabled: false } %>
+    </div>
+  </div>
+</div>

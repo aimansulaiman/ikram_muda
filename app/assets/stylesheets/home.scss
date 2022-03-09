@@ -1,5 +1,5 @@
 .home-feature-title {
-  margin: 100px 100px 50px  0;
+  margin: 50px 100px 50px  0;
   font-size: 48px;
   text-align: inherit;
 }
@@ -7,4 +7,32 @@
 .home-feature-description {
   font-size:20px;
   color: rgb(58,58,58);
+}
+
+.portfolio-wrap {
+  box-shadow: 15px 15px 15px 15px rgba(54, 69, 79, 0.08);
+  transition: 0.3s;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto
+}
+
+.table td, .table th, {
+  font-size: 16px !important;
+}
+
+.admin-title {
+  font-size: 20px !important;
+  margin: 1rem 0 2rem;
+}
+
+.form-group, .customer-form-wrapper {
+  font-size: 16px !important;
+  margin: 1rem 0 2rem;
+}
+
+.nav-admin-option {
+  font-size: 14px !important;
 }

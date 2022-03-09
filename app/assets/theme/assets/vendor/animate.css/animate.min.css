@@ -13,8 +13,8 @@
 }
 
 .animate__animated {
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
     -webkit-animation-duration: var(--animate-duration);
     animation-duration: var(--animate-duration);
     -webkit-animation-fill-mode: both;
@@ -112,8 +112,8 @@
 
 @media (prefers-reduced-motion: reduce), print {
     .animate__animated {
-        -webkit-animation-duration: 1ms !important;
-        animation-duration: 1ms !important;
+        -webkit-animation-duration: 0.5ms !important;
+        animation-duration: 0.5ms !important;
         -webkit-transition-duration: 1ms !important;
         transition-duration: 1ms !important;
         -webkit-animation-iteration-count: 1 !important;
