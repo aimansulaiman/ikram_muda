@@ -1,5 +1,5 @@
 <div>
-  <%= render partial:"layouts/navbar" %>
+  <%= render partial: "layouts/navbar" %>
   <div class="row" style="margin-top:100px">
     <div class="col-md-2" style="margin-left:50px">
       <%= render 'layouts/sidebar' %>
@@ -7,9 +7,9 @@
     <div class="col-md-8">
       <p id="notice"><%= notice %></p>
       <h1 class="admin-title">New Umrah Customer</h1>
-      <%= link_to 'Back', umrah_customers_path, class:"nav-admin-option" %>
+      <%= link_to 'Back', umrah_customers_path, class: "nav-admin-option" %>
 
-      <%= render partial: 'umrah_customers/common/customer_form', locals: {is_display_only:false} %>
+      <%= render partial: 'umrah_customers/common/customer_form', locals: { is_display_only: false } %>
     </div>
   </div>
 </div>

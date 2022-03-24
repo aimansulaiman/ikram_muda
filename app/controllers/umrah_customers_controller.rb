@@ -1,7 +1,7 @@
 class UmrahCustomersController < ApplicationController
   before_action :set_umrah_customer, only: %i[ show edit update destroy ]
-  before_action :get_flight_details, only: %i[ show new edit ]
-  before_action :get_customer_payment, only: %i[ edit show ]
+  before_action :get_flight_details, only: %i[ show new edit update destroy ]
+  before_action :get_customer_payment, only: %i[ edit show update destory ]
 
 
   # GET /umrah_customers or /umrah_customers.json
@@ -37,7 +37,7 @@ class UmrahCustomersController < ApplicationController
 
     respond_to do |format|
       if @umrah_customer.save
-        format.html { redirect_to umrah_customer_url(@umrah_customer), notice: "Umrah customer was successfully created." }
+        format.html { redirect_to umrah_customers_path, notice: "Umrah customer was successfully created." }
         format.json { render :show, status: :created, location: @umrah_customer }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -50,7 +50,7 @@ class UmrahCustomersController < ApplicationController
   def update
     respond_to do |format|
       if @umrah_customer.update(umrah_customer_params)
-        format.html { redirect_to umrah_customer_url(@umrah_customer, @flight_inbound_detail), notice: "Umrah customer was successfully updated." }
+        format.html { redirect_to umrah_customers_path, notice: "Umrah customer was successfully updated." }
         format.json { render :show, status: :ok, location: @umrah_customer }
       else
         format.html { render :edit, status: :unprocessable_entity }

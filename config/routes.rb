@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  resources :images
+  resources :images do
+    # get "update_package", to: "images#new_wp", on: :new
+  end
+
+
+  # resources :images, path_names: { new: 'new/:is_update_package' }
   resources :umrah_customers
 
   devise_for :users

@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(window).load(function () {
     if ($("#update_customer_detail")) {
         $("#customer_phone_number")
             .keyup(function () {

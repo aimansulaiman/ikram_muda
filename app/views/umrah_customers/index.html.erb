@@ -30,9 +30,8 @@
                 <%= link_to "View Detail", umrah_customer_path(customer.id), class: "btn-sm btn-primary primary_button_text text-white", style: "font-size:12px" %>
               </td>
               <td>
-                <%= link_to "Delete Customer", umrah_customer_path(customer.id), method: :delete, class: "btn-sm btn-primary primary_button_text text-white", style: "font-size:12px" %>
+                <%= link_to "Delete Customer", umrah_customer_path(customer.id), {:confirm => "Are you sure you want to delete this pattern?", method: :delete, class: "btn-sm btn-primary primary_button_text text-white", style: "font-size:12px" } %>
               </td>
-
             </tr>
           <% end %>
           </tbody>

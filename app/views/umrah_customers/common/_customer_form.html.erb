@@ -1,52 +1,75 @@
-<div class="form-row customer-form-wrapper">
-  <div class="form-group col-md-8">
-    <%= form_with(model: @umrah_customer) do |form| %>
+<%= form_with(model: @umrah_customer) do |form| %>
+  <div class="form-row customer-form-wrapper">
+
+    <div class="form-group col-md-8">
       <%= form.label :customer_name, "Name" %>
       <%= form.text_field :customer_name, class: "form-control customer-form-wrapper", value: @umrah_customer.customer_name, readonly: is_display_only %>
+    </div>
+
+    <div class="form-group col-md-2">
+      <%= form.label :no_tel, "Tel Number" %>
+      <%= form.text_field :no_tel, class: "form-control customer-form-wrapper", value: @umrah_customer.no_tel, readonly: is_display_only, id: 'customer_phone_number' %>
+      <p id="update_phone_error_message"></p>
+    </div>
+
+    <div class="form-group col-2">
+      <%= form.label :flight_outbound_detail_id, "Return Date" %>
+      <%= form.collection_select :flight_outbound_detail_id, @flight_outbound_detail, :id, :flight_departure_date_from_kl, { include_blank: false }, { class: "form-control customer-form-wrapper", readonly: is_display_only } %>
+    </div>
+
+    <div class="form-group col-2">
+      <%= form.label :flight_inbound_detail_id, "Departure Date" %>
+      <%= form.collection_select :flight_inbound_detail_id, @flight_inbound_detail, :id, :flight_departure_date_from_saudi, { include_blank: false }, { class: "form-control customer-form-wrapper", readonly: is_display_only } %>
+    </div>
+
+    <div class="form-group col-10">
+      <%= form.label :address, "Address" %>
+      <%= form.text_field :address, class: "form-control customer-form-wrapper", value: @umrah_customer.address, readonly: is_display_only %>
+    </div>
+
+    <div class="form-row col-md-10">
+      <div class="form-group col-md-2">
+        <%= form.label :total_participants, "Total Participants" %>
+        <%= form.text_field :total_participants, class: "form-control customer-form-wrapper", value: @umrah_customer.total_participants.to_s, readonly: is_display_only %>
       </div>
       <div class="form-group col-md-2">
-        <%= form.label :no_tel, "Tel Number" %>
-        <%= form.text_field :no_tel, class: "form-control customer-form-wrapper", value: @umrah_customer.no_tel, readonly: is_display_only, id: 'customer_phone_number' %>
-        <p id="update_phone_error_message"></p>
+        <%= form.label :total_cost, "Total Cost" %>
+        <%= form.number_field :total_cost, class: "form-control customer-form-wrapper", value: @customer_total_cost, readonly: is_display_only %>
       </div>
-      <div class="form-group col-2">
-        <%= form.label :flight_outbound_detail_id, "Return Date" %>
-        <%= form.collection_select :flight_outbound_detail_id, @flight_outbound_detail, :id, :flight_departure_date_from_kl, { include_blank: false }, { class: "form-control customer-form-wrapper", readonly: is_display_only } %>
+      <div class="form-group col-md-2">
+        <%= form.label :total_paid, "Total Paid" %>
+        <%= form.number_field :total_paid, class: "form-control customer-form-wrapper", value: @customer_total_paid, readonly: is_display_only %>
       </div>
-      <div class="form-group col-2">
-        <%= form.label :flight_inbound_detail_id, "Departure Date" %>
-        <%= form.collection_select :flight_inbound_detail_id, @flight_inbound_detail, :id, :flight_departure_date_from_saudi, { include_blank: false }, { class: "form-control customer-form-wrapper", readonly: is_display_only } %>
+      <div class="form-group col-md-3">
+        <%= form.label :date_registered, "Date Registered" %>
+        <%= form.date_field :date_registered, class: "form-control customer-form-wrapper", value: @umrah_customer.date_registered, readonly: is_display_only %>
       </div>
-      <div class="form-group col-10">
-        <%= form.label :address, "Address" %>
-        <%= form.text_field :address, class: "form-control customer-form-wrapper", value: @umrah_customer.address, readonly: is_display_only %>
-      </div>
-      <div class="form-row col-md-10">
-        <div class="form-group col-md-2">
-          <%= form.label :total_participants, "Total Participants" %>
-          <%= form.text_field :total_participants, class: "form-control customer-form-wrapper", value: @umrah_customer.total_participants.to_s, readonly: is_display_only %>
+
+      <div class="form-group" style="width:100%">
+        <%= form.label :deposit, :class => 'control-label col-lg-2' %>
+        <div class="col-lg-10">
+          <%= form.file_field :deposit, accept: 'image/jpeg,image/gif,image/png', :class => 'form-control', :style => 'font-size:12px' %>
         </div>
-        <div class="form-group col-md-2">
-          <%= form.label :total_cost, "Total Cost" %>
-          <%= form.number_field :total_cost, class: "form-control customer-form-wrapper", value: @customer_total_cost, readonly: is_display_only %>
-        </div>
-        <div class="form-group col-md-2">
-          <%= form.label :total_paid, "Total Paid" %>
-          <%= form.number_field :total_paid, class: "form-control customer-form-wrapper", value: @customer_total_paid, readonly: is_display_only %>
-        </div>
-        <div class="form-group col-md-3">
-          <%= form.label :date_registered, "Date Registered" %>
-          <%= form.date_field :date_registered, class: "form-control customer-form-wrapper", value: @umrah_customer.date_registered, readonly: is_display_only %>
-        </div>
+        <%= form.error_span(:deposit) %>
       </div>
+
+      <div class="form-group" style="width:100%">
+        <%= form.label :full_payment, :class => 'control-label col-lg-2' %>
+        <div class="col-lg-10">
+          <%= form.file_field :full_payment, accept: 'image/jpeg,image/gif,image/png', :class => 'form-control', :style => 'font-size:12px' %>
+        </div>
+        <%= form.error_span(:full_payment) %>
       </div>
-      <% if is_display_only %>
-        <%= link_to "Edit Customer Detail", edit_umrah_customer_path(@umrah_customer.id), method: :get, class: 'btn btn-primary text-white', style:"font-size:12px" %>
-      <% else %>
-        <% if @new_customer %>
-          <%= form.submit "Register new customer", class: "btn btn-primary text-white", id: "register_new_customer", style:"font-size:12px" %>
-        <% else %>
-          <%= form.submit "Update Details", class: "btn btn-primary text-white", id: "update_customer_detail", style:"font-size:12px" %>
-        <% end %>
-      <% end %>
+    </div>
+
+  </div>
+  <% if is_display_only %>
+    <%= link_to "Edit Customer Detail", edit_umrah_customer_path(@umrah_customer.id), method: :get, class: 'btn btn-primary text-white', style: "font-size:12px" %>
+  <% else %>
+    <% if @new_customer %>
+      <%= form.submit "Register new customer", class: "btn btn-primary text-white", id: "register_new_customer", style: "font-size:12px" %>
+    <% else %>
+      <%= form.submit "Update Details", class: "btn btn-primary text-white", id: "update_customer_detail", style: "font-size:12px" %>
     <% end %>
+  <% end %>
+<% end %>

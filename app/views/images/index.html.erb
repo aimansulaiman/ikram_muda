@@ -1,41 +1,46 @@
-<div class="col-md-2">
-  <%= render 'layouts/sidebar' %>
+<div>
+  <%= render partial: "layouts/navbar" %>
+  <div class="row" style="margin-top:100px">
+    <div class="col-md-2" style="margin-left:50px">
+      <%= render 'layouts/sidebar' %>
+    </div>
+    <div class="col-md-8">
+      <%- model_class = Image -%>
+      <h1 class="admin-title"><%= t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+      <div class="container">
+        <table class="table col-sm-10 align-self-center">
+          <thead class="thead-dark text-center">
+          <tr>
+            <th scope="col">No</th>
+            <th scope="col"><%= model_class.human_attribute_name(:name) %></th>
+            <th scope="col"><%= model_class.human_attribute_name(:Action_Option ) %></th>
+            <th scope="col"><%= model_class.human_attribute_name(:umrah_package) %></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+          </tr>
+          </thead>
+          <tbody>
+          <% @images.each do |image| %>
+            <tr>
+            <th scope="row" class="counterCell text-center"></th>
+            <td class="text-center"><%= image.name %></td>
+            <td class="text-center">
+              <%= link_to t('.show', :default => t("helpers.links.show")),
+                          image_path(image), :class => 'btn btn-default btn-xs', :style => "font-size:12px" %>
+              <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                          edit_image_path(image), :class => 'btn btn-default btn-xs', :style => "font-size:12px" %>
+              <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                          image_path(image),
+                          :method => :delete,
+                          :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                          class: "btn btn-primary btn-sm primary_button_text text-white", :style => "font-size:12px" %>
+            </td>
+            <td class="text-center"><%= image.umrah_package.title if image.umrah_package.present? %></td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 </div>
-<%- model_class = Image -%>
-<div class="page-header">
-  <h1><%= t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
-</div>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:name) %></th>
-      <th><%= model_class.human_attribute_name(:umrah_package_id) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @images.each do |image| %>
-      <tr>
-        <td><%= link_to image.id, image_path(image) %></td>
-        <td><%= image.name %></td>
-        <td><%= image.umrah_package.title %></td>
-        <td>
-          <%= link_to t('.show', :default => t("helpers.links.show")),
-                      image_path(image), :class => 'btn btn-default btn-xs' %>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_image_path(image), :class => 'btn btn-default btn-xs' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      image_path(image),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      class:"btn btn-primary btn-sm primary_button_text text-white" %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_image_path,
-            class:"btn btn-primary btn-sm primary_button_text text-white" %>

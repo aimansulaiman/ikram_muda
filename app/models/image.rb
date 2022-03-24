@@ -1,4 +1,4 @@
 class Image < ApplicationRecord
-  belongs_to :umrah_package
+  has_one :umrah_package
   mount_uploader :picture, PictureUploader
 end

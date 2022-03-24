@@ -1,5 +1,5 @@
-$(document).ready(function () {
-
+$(window).load(function () {
+    console.log('haha')
     if ($("#register_new_customer")) {
 
         $("#umrah_customer_customer_name")
