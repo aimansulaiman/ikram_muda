@@ -22,9 +22,6 @@ class UmrahCustomersController < ApplicationController
   # GET /umrah_customers/new
   def new
     @umrah_customer = UmrahCustomer.new
-    reset_value_payment = '0.00'
-    @customer_total_paid = reset_value_payment
-    @customer_total_cost = reset_value_payment
     @new_customer = @umrah_customer
   end
 

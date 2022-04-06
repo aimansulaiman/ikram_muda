@@ -3,7 +3,7 @@
   <%= form_with(model: @umrah_package, id: "umrah-package-form") do |form| %>
 
     <%= form.label :title, "Title" %>
-    <%= form.text_field :title, placeholder: "e.g Umrah Safwa", class: "form-control customer-form-wrapper", disabled: disabled, id:"input" %>
+    <%= form.text_field :title, placeholder: "e.g Umrah Safwa", class: "form-control customer-form-wrapper", disabled: disabled, id: "input" %>
 
     <div class="form-group select-form-margin-top">
       <%= form.label :package_type, "Umrah Type" %>
@@ -21,7 +21,7 @@
       <div class="row col-md-12">
         <label class="col-form-label" style="margin-top:0.5rem">RM</label>
         <div class="col-sm-11">
-          <%= form.number_field :price, placeholder: "0.00", class: "form-control customer-form-wrapper", disabled: disabled %>
+          <%= form.text_field :price, class: "form-control customer-form-wrapper", disabled: disabled %>
         </div>
       </div>
     </div>
@@ -31,14 +31,7 @@
       <%= form.text_field :hotel, placeholder: "e.g Hotel Safwa", class: "form-control customer-form-wrapper", disabled: disabled %>
     </div>
 
-    <%#= form.hidden_field :package_full_name%>
-    <%#= hidden_field_tag :package_full_name, params[:hotel]  %>
-
-<!--    <div class="form-group select-form-margin-top">-->
-      <%#= form.label :package_full_name %>
-      <%#= form.hidden_field_tag :package_full_name, placeholder: "e.g Hotel Safwa", class: "form-control customer-form-wrapper", disabled: disabled %>
-      <%= form.hidden_field :package_full_name, id: 'package_full_name'  %>
-<!--    </div>-->
+    <%= form.hidden_field :package_full_name, id: 'package_full_name' %>
 
     <dl class="form-group">
       <dd>
@@ -58,7 +51,7 @@
       <%= link_to "Edit Package", edit_umrah_package_path(@umrah_package.id), class: "btn btn-primary text-white select-form-margin-top", style: "font-size:12px", id: "update-package" %>
     <% else %>
       <% if @is_new_package %>
-        <%= form.submit "Register New Packages", class: "btn btn-primary text-white select-form-margin-top", style: "font-size:12px" , id: "update-package"%>
+        <%= form.submit "Register New Packages", class: "btn btn-primary text-white select-form-margin-top", style: "font-size:12px", id: "update-package" %>
       <% else %>
         <%= form.submit "Update Package", { class: "btn btn-primary text-white select-form-margin-top", style: "font-size:12px", id: "update-package" } %>
       <% end %>

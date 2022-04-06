@@ -1,7 +1,11 @@
 class UmrahCustomer < ApplicationRecord
+  attribute :total_participants,  :integer, default: 1
+
   belongs_to :flight_inbound_detail
   belongs_to :flight_outbound_detail
   belongs_to :umrah_package
+
+
 
   mount_uploader :quotation_form, AttachmentUploader
 

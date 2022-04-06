@@ -107,9 +107,8 @@
 
         <div class="form-group col-md-2 customer-form-text-style">
           <%= form.label :total_cost, "Total Cost", style: 'font-size:12px' %>
-          <%= form.number_field :total_cost, class: "form-control customer-form-wrapper", value: @umrah_package_price, readonly: true, style: "background-color:#C5C6D0" %>
+          <span class= "form-control customer-form-wrapper" style="background-color:#C5C6D0"><%= @umrah_package_price %></span>
         </div>
-
       </div>
     </div>
 
