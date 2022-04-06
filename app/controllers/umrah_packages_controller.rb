@@ -16,6 +16,9 @@ class UmrahPackagesController < ApplicationController
   def create
     @umrah_package = UmrahPackage.create(umrah_package_params)
 
+    package_full_name = "#{@umrah_package.title}  #{@umrah_package.rooms_per_pax} pax/rooms"
+    @umrah_package.update(package_full_name: package_full_name)
+
     respond_to do |format|
       if @umrah_package.save
         format.html { redirect_to umrah_packages_path, notice: "Umrah customer was successfully created." }
@@ -25,13 +28,6 @@ class UmrahPackagesController < ApplicationController
         format.json { render json: @umrah_package.errors, status: :unprocessable_entity }
       end
     end
-
-
-    # image_title = params[:umrah_package][:title]
-    # image_picture = params[:umrah_package][:picture]
-    # # umrah_package_id = @umrah_package.id
-    # # Image.create(name:image_title,picture:image_picture,umrah_package_id: umrah_package_id)
-    # redirect_to umrah_packages_path
   end
 
   def show
@@ -76,7 +72,7 @@ class UmrahPackagesController < ApplicationController
   end
 
   def umrah_package_params
-    params.require(:umrah_package).permit(:title, :package_type, :price, :hotel, :image_id)
+    params.require(:umrah_package).permit(:title, :package_type, :price, :hotel , :image_id, :rooms_per_pax, :package_full_name )
   end
 
   def get_package_images

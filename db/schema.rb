@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_17_145742) do
+ActiveRecord::Schema.define(version: 2022_03_31_090534) do
 
   create_table "flight_inbound_details", force: :cascade do |t|
     t.date "flight_departure_date_from_saudi"
@@ -39,8 +39,8 @@ ActiveRecord::Schema.define(version: 2022_03_17_145742) do
 
   create_table "umrah_customers", force: :cascade do |t|
     t.string "customer_name"
-    t.string "no_tel"
-    t.string "address"
+    t.string "house_tel"
+    t.string "home_address"
     t.integer "total_participants"
     t.date "date_registered"
     t.float "total_paid"
@@ -50,6 +50,18 @@ ActiveRecord::Schema.define(version: 2022_03_17_145742) do
     t.integer "flight_inbound_detail_id"
     t.integer "flight_outbound_detail_id"
     t.integer "umrah_package_id"
+    t.string "quotation_form"
+    t.string "registration_form"
+    t.string "deposit_payment"
+    t.string "final_payment"
+    t.string "customer_mahram"
+    t.string "mobile_tel"
+    t.string "customer_waris_name"
+    t.string "waris_address"
+    t.string "waris_tel"
+    t.string "identification_card"
+    t.string "gender"
+    t.string "citizenship"
     t.index ["flight_inbound_detail_id"], name: "index_umrah_customers_on_flight_inbound_detail_id"
     t.index ["flight_outbound_detail_id"], name: "index_umrah_customers_on_flight_outbound_detail_id"
     t.index ["umrah_package_id"], name: "index_umrah_customers_on_umrah_package_id"
@@ -63,6 +75,8 @@ ActiveRecord::Schema.define(version: 2022_03_17_145742) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "image_id"
+    t.integer "rooms_per_pax"
+    t.string "package_full_name"
     t.index ["image_id"], name: "index_umrah_packages_on_image_id"
   end
 

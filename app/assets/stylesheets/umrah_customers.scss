@@ -14,8 +14,12 @@ table {
   style: "color:white";
 }
 
-.customer-form-wrapper {
-  font-size: 12px;
+.customer-form-text-style {
+  font-size: 12px !important;
+}
+
+.form-title-style {
+  margin: 5rem 0 5px
 }
 
 #update_phone_error_message {

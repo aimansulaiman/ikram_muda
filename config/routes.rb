@@ -11,5 +11,7 @@ Rails.application.routes.draw do
   resources "home"
   root to: "welcome#index"
   resources :umrah_packages
+
+  get '/uploads/umrah_customer/:form/:id/:filename', to: 'umrah_customers#show', as: :view_pdf_file
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

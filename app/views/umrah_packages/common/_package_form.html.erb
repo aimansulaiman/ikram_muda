@@ -1,13 +1,18 @@
 <div class="container form-group col-md-8">
   <% @image ||= nil %>
-  <%= form_with(model: @umrah_package) do |form| %>
+  <%= form_with(model: @umrah_package, id: "umrah-package-form") do |form| %>
 
     <%= form.label :title, "Title" %>
-    <%= form.text_field :title, placeholder: "e.g Umrah Safwa", class: "form-control customer-form-wrapper", disabled: disabled %>
+    <%= form.text_field :title, placeholder: "e.g Umrah Safwa", class: "form-control customer-form-wrapper", disabled: disabled, id:"input" %>
 
     <div class="form-group select-form-margin-top">
       <%= form.label :package_type, "Umrah Type" %>
       <%= form.select :package_type, ["Umrah Standard", "Umrah Ramadhan", "Umrah Family"], { include_blank: false }, { class: "form-control customer-form-wrapper", disabled: disabled } %>
+    </div>
+
+    <div class="form-group select-form-margin-top">
+      <%= form.label :rooms_per_pax, "Jemaah Per Bilik" %>
+      <%= form.select :rooms_per_pax, [2, 3, 4, 5], { include_blank: false }, { class: "form-control customer-form-wrapper", disabled: disabled, id: "pax-per-room" } %>
     </div>
 
     <div class="form-group">
@@ -26,10 +31,15 @@
       <%= form.text_field :hotel, placeholder: "e.g Hotel Safwa", class: "form-control customer-form-wrapper", disabled: disabled %>
     </div>
 
-    <div class="form-group select-form-margin-top">
-      <%= form.label :package_type, "Umrah Type" %>
-      <%= form.select :package_type, ["Umrah Standard", "Umrah Ramadhan", "Umrah Family"], { include_blank: false }, { class: "form-control customer-form-wrapper", disabled: disabled } %>
-    </div>
+    <%#= form.hidden_field :package_full_name%>
+    <%#= hidden_field_tag :package_full_name, params[:hotel]  %>
+
+<!--    <div class="form-group select-form-margin-top">-->
+      <%#= form.label :package_full_name %>
+      <%#= form.hidden_field_tag :package_full_name, placeholder: "e.g Hotel Safwa", class: "form-control customer-form-wrapper", disabled: disabled %>
+      <%= form.hidden_field :package_full_name, id: 'package_full_name'  %>
+<!--    </div>-->
+
     <dl class="form-group">
       <dd>
         <p3>Package Poster</p3>
@@ -37,7 +47,6 @@
       <% if @image.present? %>
         <dd><%= image_tag(@image.picture.url, size: '150x150', class: "img-thumbnail", disabled: disabled) unless @image.picture.nil? %></dd>
         <%= link_to "Change poster", edit_image_path(@image.id, is_from_package: true, package_id: @umrah_package.id), class: "btn btn-primary text-white select-form-margin-top", style: "font-size:12px" if disabled.blank? %>
-        <%#= link_to "Change poster", new_image_path(is_update_package: true), class: "btn btn-primary text-white select-form-margin-top", style: "font-size:12px" if disabled.blank?  %>
       <% elsif @enable_poster_upload %>
         <div class="form-group">
           <%= link_to "Change poster", new_image_path(is_update_poster_from_package: true, package_id: @umrah_package.id), class: "btn btn-primary text-white select-form-margin-top", style: "font-size:12px" if disabled.blank? %>
@@ -46,12 +55,12 @@
     </dl>
 
     <% if disabled %>
-      <%= link_to "Edit Package", edit_umrah_package_path(@umrah_package.id), class: "btn btn-primary text-white select-form-margin-top", style: "font-size:12px" %>
+      <%= link_to "Edit Package", edit_umrah_package_path(@umrah_package.id), class: "btn btn-primary text-white select-form-margin-top", style: "font-size:12px", id: "update-package" %>
     <% else %>
       <% if @is_new_package %>
-        <%= form.submit "Register New Packages", class: "btn btn-primary text-white select-form-margin-top", style: "font-size:12px" %>
+        <%= form.submit "Register New Packages", class: "btn btn-primary text-white select-form-margin-top", style: "font-size:12px" , id: "update-package"%>
       <% else %>
-        <%= form.submit "Update Package", class: "btn btn-primary text-white select-form-margin-top", style: "font-size:12px" %>
+        <%= form.submit "Update Package", { class: "btn btn-primary text-white select-form-margin-top", style: "font-size:12px", id: "update-package" } %>
       <% end %>
     <% end %>
     </div>
