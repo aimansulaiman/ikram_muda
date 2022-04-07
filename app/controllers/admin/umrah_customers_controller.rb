@@ -1,14 +1,14 @@
-class UmrahCustomersController < ApplicationController
+class Admin::UmrahCustomersController < ApplicationController
   before_action :set_umrah_customer, only: %i[ show edit update destroy ]
   before_action :get_flight_details, only: %i[ show new edit update destroy ]
   before_action :get_customer_payment, only: %i[ edit show update destory ]
   before_action :get_umrah_package_detail, only: %i[ new edit show update destory ]
 
-  include UmrahCustomersHelper
+  include Admin::UmrahCustomersHelper
 
   # GET /umrah_customers or /umrah_customers.json
   def index
-    @umrah_customers = UmrahCustomer.all
+    @umrah_customers = Admin::UmrahCustomer.all
   end
 
   # GET /umrah_customers/1 or /umrah_customers/1.json
@@ -21,7 +21,7 @@ class UmrahCustomersController < ApplicationController
 
   # GET /umrah_customers/new
   def new
-    @umrah_customer = UmrahCustomer.new
+    @umrah_customer = Admin::UmrahCustomer.new
     @new_customer = @umrah_customer
   end
 
@@ -32,11 +32,11 @@ class UmrahCustomersController < ApplicationController
 
   # POST /umrah_customers or /umrah_customers.json
   def create
-    @umrah_customer = UmrahCustomer.new(umrah_customer_params)
+    @umrah_customer = Admin::UmrahCustomer.new(umrah_customer_params)
 
     respond_to do |format|
       if @umrah_customer.save
-        format.html { redirect_to umrah_customers_path, notice: "Umrah customer was successfully created." }
+        format.html { redirect_to admin_umrah_customers_path, notice: "Umrah customer was successfully created." }
         format.json { render :show, status: :created, location: @umrah_customer }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -49,7 +49,7 @@ class UmrahCustomersController < ApplicationController
   def update
     respond_to do |format|
       if @umrah_customer.update(umrah_customer_params)
-        format.html { redirect_to umrah_customer_path, notice: "Umrah customer was successfully updated." }
+        format.html { redirect_to admin_umrah_customer_path(@umrah_customer.id), notice: "Umrah customer was successfully updated." }
         format.json { render :show, status: :ok, location: @umrah_customer }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -63,7 +63,7 @@ class UmrahCustomersController < ApplicationController
     @umrah_customer.destroy
 
     respond_to do |format|
-      format.html { redirect_to umrah_customers_url, notice: "Umrah customer was successfully destroyed." }
+      format.html { redirect_to admin_umrah_customers_url, notice: "Umrah customer was successfully destroyed." }
       format.json { head :no_content }
     end
   end
@@ -82,11 +82,15 @@ class UmrahCustomersController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def umrah_customer_params
-    params.require(:umrah_customer).permit(:customer_name, :house_tel, :home_address, :total_participants, :date_registered, :total_paid, :total_cost, :flight_inbound_detail_id, :flight_outbound_detail_id, :quotation_form, :registration_form, :deposit_payment, :final_payment, :umrah_package_id, :customer_mahram, :mobile_tel, :customer_waris_name, :waris_address, :waris_tel, :identification_card, :gender, :citizenship)
+    params.require(:admin_umrah_customer).permit(:customer_name, :house_tel, :home_address, :total_participants, :date_registered, :total_paid, :total_cost, :flight_inbound_detail_id, :flight_outbound_detail_id, :quotation_form, :registration_form, :deposit_payment, :final_payment, :umrah_package_id, :customer_mahram, :mobile_tel, :customer_waris_name, :waris_address, :waris_tel, :identification_card, :gender, :citizenship)
   end
 
   def get_customer_payment
     @customer_total_paid = get_total_paid
+  end
+
+  def set_umrah_customer
+    @umrah_customer = Admin::UmrahCustomer.find(params[:id])
   end
 
 end

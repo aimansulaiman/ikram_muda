@@ -194,7 +194,7 @@
 
 
   <% if is_display_only %>
-    <%= link_to "Edit Customer Detail", edit_umrah_customer_path(@umrah_customer.id), method: :get, class: 'btn btn-primary text-white', style: "font-size:12px" %>
+    <%= link_to "Edit Customer Detail", edit_admin_umrah_customer_path(@umrah_customer.id), method: :get, class: 'btn btn-primary text-white', style: "font-size:12px" %>
   <% else %>
     <% if @new_customer %>
       <%= form.submit "Register new customer", class: "btn btn-primary text-white", id: "register_new_customer", style: "font-size:12px" %>

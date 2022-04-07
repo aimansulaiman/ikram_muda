@@ -7,10 +7,10 @@
     <div class="col-md-8">
       <p id="notice"><%= notice %></p>
       <h1 class="admin-title">Editing Umrah Customer</h1>
-      <%= link_to 'Show', @umrah_customer, class:"nav-admin-option" %> |
-      <%= link_to 'Back', umrah_customers_path, class:"nav-admin-option" %>
+      <%= link_to 'Show', admin_umrah_customer_path(@umrah_customer), class:"nav-admin-option" %> |
+      <%= link_to 'Back', admin_umrah_customers_path, class:"nav-admin-option" %>
 
-      <%= render partial: 'umrah_customers/common/customer_form', locals: { is_display_only: false, umrah_customer: @umrah_customer } %>
+      <%= render partial: 'admin/umrah_customers/common/customer_form', locals: { is_display_only: false, umrah_customer: @umrah_customer } %>
     </div>
   </div>
 </div>
