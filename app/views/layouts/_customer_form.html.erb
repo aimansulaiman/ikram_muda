@@ -1,0 +1,205 @@
+<%= form_with(model: @umrah_customer, multipart: true) do |form| %>
+
+  <div class="form-row customer-form-wrapper">
+
+    <h1>Maklumat Jemaah</h1>
+    <div style="width:100%;border-style:outset">
+
+      <div class="form-group col-10 customer-form-text-style">
+        <%= form.label :customer_name, "Nama Penuh" %>
+        <%= form.text_field :customer_name, class: "form-control customer-form-wrapper", value: @umrah_customer.customer_name, readonly: is_display_only %>
+      </div>
+
+      <div class="form-group col-10 customer-form-text-style">
+        <%= form.label :identification_card, "Numbor I/C" %>
+        <%= form.text_field :identification_card, class: "form-control customer-form-wrapper", value: @umrah_customer.customer_name, readonly: is_display_only %>
+      </div>
+
+      <div class="form-group col-10 customer-form-text-style">
+        <%= form.label :gender, "Jantina" %>
+        <%= form.select :gender, %w[Lelaki Perempuan], { include_blank: false }, { class: "form-control customer-form-wrapper", readonly: is_display_only } %>
+      </div>
+
+      <div class="form-group col-10 customer-form-text-style">
+        <%= form.label :citizenship, "Warganegara" %>
+        <%= form.text_field :citizenship, class: "form-control customer-form-wrapper", value: @umrah_customer.citizenship, readonly: is_display_only %>
+      </div>
+
+      <div class="form-group col-10 customer-form-text-style">
+        <%= form.label :customer_mahram, "Nama Mahram" %>
+        <%= form.text_field :customer_mahram, class: "form-control customer-form-wrapper", value: @umrah_customer.customer_mahram, readonly: is_display_only %>
+      </div>
+
+      <div class="form-group col-10 customer-form-text-style">
+        <%= form.label :home_address, "Alamat Rumah" %>
+        <%= form.text_field :home_address, class: "form-control customer-form-wrapper", value: @umrah_customer.home_address, readonly: is_display_only %>
+      </div>
+
+      <div class="form-row col-md-10">
+        <div class="form-group col-md-5 customer-form-text-style">
+          <%= form.label :house_tel, "Telefon Rumah" %>
+          <%= form.text_field :house_tel, class: "form-control customer-form-wrapper", value: @umrah_customer.house_tel, readonly: is_display_only, id: 'customer_phone_number' %>
+          <p id="update_phone_error_message"></p>
+        </div>
+
+        <div class="form-group col-md-5 customer-form-text-style">
+          <%= form.label :mobile_tel, "Telefon Bimbit" %>
+          <%= form.text_field :mobile_tel, class: "form-control customer-form-wrapper", value: @umrah_customer.mobile_tel, readonly: is_display_only, id: 'customer_phone_number' %>
+          <p id="update_phone_error_message"></p>
+        </div>
+
+      </div>
+    </div>
+    <br>
+    <h1 class="form-title-style">Maklumat Waris</h1>
+    <div style="width:100%;border-style:outset">
+
+      <div class="form-group col-10 customer-form-text-style">
+        <%= form.label :customer_waris_name, "Nama Waris" %>
+        <%= form.text_field :customer_waris_name, class: "form-control customer-form-wrapper", value: @umrah_customer.customer_waris_name, readonly: is_display_only %>
+      </div>
+
+      <div class="form-group col-10 customer-form-text-style">
+        <%= form.label :waris_address, "Alamat Waris" %>
+        <%= form.text_field :waris_address, class: "form-control customer-form-wrapper", value: @umrah_customer.waris_address, readonly: is_display_only %>
+      </div>
+
+      <div class="form-group col-2 customer-form-text-style">
+        <%= form.label :waris_tel, "Telefon Waris" %>
+        <%= form.text_field :waris_tel, class: "form-control customer-form-wrapper", value: @umrah_customer.waris_tel, readonly: is_display_only, id: 'customer_phone_number' %>
+        <p id="update_phone_error_message"></p>
+      </div>
+    </div>
+
+    <h1 class="form-title-style">Maklumat Pakej</h1>
+    <div style="width:100%;border-style:outset">
+      <div class="form-row col-md-10">
+
+        <div class="form-group col-md-7 customer-form-text-style">
+          <%= form.label :umrah_package_id, "Jenis Pakej" %>
+          <%= form.collection_select :umrah_package_id, @umrah_package, :id, :package_full_name, { include_blank: false }, { class: "form-control customer-form-wrapper", readonly: is_display_only } %>
+        </div>
+
+        <div class="form-group col-md-3 customer-form-text-style">
+          <%= form.label :date_registered, "Date Registered", style: 'font-size:12px' %>
+          <%= form.date_field :date_registered, class: "form-control customer-form-wrapper", value: @umrah_customer.date_registered, readonly: is_display_only %>
+        </div>
+
+        <div class="form-group col-md-2 customer-form-text-style">
+          <%= form.label :total_participants, "Total Participants", style: 'font-size:12px' %>
+          <%= form.text_field :total_participants, class: "form-control customer-form-wrapper", value: @umrah_customer.total_participants.to_s, readonly: is_display_only %>
+        </div>
+
+        <div class="form-group col-2 customer-form-text-style">
+          <%= form.label :flight_inbound_detail_id, "Departure Date", style: 'font-size:12px' %>
+          <%= form.collection_select :flight_inbound_detail_id, @flight_inbound_detail, :id, :flight_departure_date_from_saudi, { include_blank: false }, { class: "form-control customer-form-wrapper", readonly: is_display_only } %>
+        </div>
+
+        <div class="form-group col-2 customer-form-text-style">
+          <%= form.label :flight_outbound_detail_id, "Return Date", style: 'font-size:12px' %>
+          <%= form.collection_select :flight_outbound_detail_id, @flight_outbound_detail, :id, :flight_departure_date_from_kl, { include_blank: false }, { class: "form-control customer-form-wrapper", readonly: is_display_only } %>
+        </div>
+
+        <div class="form-group col-md-2 customer-form-text-style">
+          <%= form.label :total_paid, "Total Paid", style: 'font-size:12px' %>
+          <%= form.number_field :total_paid, class: "form-control customer-form-wrapper", value: @customer_total_paid, readonly: is_display_only %>
+        </div>
+
+        <div class="form-group col-md-2 customer-form-text-style">
+          <%= form.label :total_cost, "Total Cost", style: 'font-size:12px' %>
+          <span class= "form-control customer-form-wrapper" style="background-color:#C5C6D0"><%= @umrah_package_price %></span>
+        </div>
+      </div>
+    </div>
+
+    <h1 class="form-title-style">Dokumentasi</h1>
+    <div style="width:100%;border-style:outset">
+      <div class="form-group row offset-md-1 customer-form-text-style">
+        <%= form.label :quotation_form, :class => 'control-label col-lg-2' %>
+        <% if @umrah_customer.quotation_form.present? %>
+          <% quotation_form = @umrah_customer.quotation_form.identifier %>
+          <%= link_to quotation_form, view_pdf_file_path(id: @umrah_customer.id, filename: quotation_form, form: 'quotation_form'), target: :_blank, title: "Click to open", class: "col-lg-10" %>
+        <% else %>
+          <% if is_display_only %>
+            <h3 class="col-lg-10">No file attached</h3>
+          <% end %>
+        <% end %>
+
+        <% if !is_display_only %>
+          <div class=" offset-md-2 col-lg-8 customer-form-text-style">
+            <%= form.file_field :quotation_form, accept: 'image/jpeg,image/gif,image/png,application/pdf', :class => 'form-control' %>
+          </div>
+          <%= form.error_span(:quotation_form) %>
+        <% end %>
+      </div>
+
+      <div class="form-group row offset-md-1 customer-form-text-style">
+        <%= form.label :registration_form, :class => 'control-label col-lg-2' %>
+        <% if @umrah_customer.registration_form.present? %>
+          <% registration_form = @umrah_customer.registration_form.identifier %>
+          <%= link_to registration_form, view_pdf_file_path(id: @umrah_customer.id, filename: registration_form, form: 'registration_form'), target: :_blank, title: "Click to open", class: "col-lg-10" %>
+        <% else %>
+          <% if is_display_only %>
+            <h3 class="col-lg-10">No file attached</h3>
+          <% end %>
+        <% end %>
+
+        <% if !is_display_only %>
+          <div class=" offset-md-2 col-lg-8 customer-form-text-style">
+            <%= form.file_field :registration_form, accept: 'image/jpeg,image/gif,image/png,application/pdf', :class => 'form-control' %>
+          </div>
+          <%= form.error_span(:registration_form) %>
+        <% end %>
+      </div>
+
+      <div class="form-group row offset-md-1 customer-form-text-style">
+        <%= form.label :deposit_payment, :class => 'control-label col-lg-2' %>
+        <% if @umrah_customer.deposit_payment.present? %>
+          <% deposit_payment = @umrah_customer.deposit_payment.identifier %>
+          <%= link_to deposit_payment, view_pdf_file_path(id: @umrah_customer.id, filename: deposit_payment, form: 'deposit_payment'), target: :_blank, title: "Click to open", class: "col-lg-10" %>
+        <% else %>
+          <% if is_display_only %>
+            <h3 class="col-lg-10">No file attached</h3>
+          <% end %>
+        <% end %>
+
+        <% if !is_display_only %>
+          <div class=" offset-md-2 col-lg-8 customer-form-text-style">
+            <%= form.file_field :deposit_payment, accept: 'image/jpeg,image/gif,image/png,application/pdf', :class => 'form-control' %>
+          </div>
+          <%= form.error_span(:deposit_payment) %>
+        <% end %>
+      </div>
+
+      <div class="form-group row offset-md-1 customer-form-text-style">
+        <%= form.label :final_payment, :class => 'control-label col-lg-2' %>
+        <% if @umrah_customer.final_payment.present? %>
+          <% final_payment = @umrah_customer.final_payment.identifier %>
+          <%= link_to final_payment, view_pdf_file_path(id: @umrah_customer.id, filename: final_payment, form: 'final_payment'), target: :_blank, title: "Click to open", class: "col-lg-10" %>
+        <% else %>
+          <% if is_display_only %>
+            <h3 class="col-lg-10">No file attached</h3>
+          <% end %>
+        <% end %>
+
+        <% if !is_display_only %>
+          <div class=" offset-md-2 col-lg-8 customer-form-text-style">
+            <%= form.file_field :final_payment, accept: 'image/jpeg,image/gif,image/png,application/pdf', :class => 'form-control' %>
+          </div>
+          <%= form.error_span(:final_payment) %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+
+  <% if is_display_only %>
+    <%= link_to "Edit Customer Detail", edit_admin_umrah_customer_path(@umrah_customer.id), method: :get, class: 'btn btn-primary text-white', style: "font-size:12px" %>
+  <% else %>
+    <% if @new_customer %>
+      <%= form.submit "Register new customer", class: "btn btn-primary text-white", id: "register_new_customer", style: "font-size:12px" %>
+    <% else %>
+      <%= form.submit "Update Details", class: "btn btn-primary text-white", id: "update_customer_detail", style: "font-size:12px" %>
+    <% end %>
+  <% end %>
+<% end %>
