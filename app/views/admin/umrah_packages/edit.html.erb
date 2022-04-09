@@ -5,11 +5,10 @@
       <%= render 'layouts/sidebar' %>
     </div>
     <div class="col-md-8">
-      <p id="notice"><%= notice %></p>
-      <h1 class="admin-title">Umrah Packages</h1>
-      <br>
-      <h1> Create New Customer here</h1>
-      <%= render partial: "umrah_packages/common/package_form", locals: { disabled: false } %>
+      <h1>Editing Umrah Package</h1>
+      <%= link_to 'Show', @umrah_package %> |
+      <%= link_to 'Back', admin_umrah_packages_path %>
+      <%= render partial: "admin/umrah_packages/common/package_form", locals: { disabled: false } %>
     </div>
   </div>
 </div>

@@ -37,20 +37,31 @@
       <dd>
         <p3>Package Poster</p3>
       </dd>
-      <% if @image.present? %>
-        <dd><%= image_tag(@image.picture.url, size: '150x150', class: "img-thumbnail", disabled: disabled) unless @image.picture.nil? %></dd>
-        <%= link_to "Change poster", edit_image_path(@image.id, is_from_package: true, package_id: @umrah_package.id), class: "btn btn-primary text-white select-form-margin-top", style: "font-size:12px" if disabled.blank? %>
-      <% elsif @enable_poster_upload %>
-        <div class="form-group">
-          <%= link_to "Change poster", new_image_path(is_update_poster_from_package: true, package_id: @umrah_package.id), class: "btn btn-primary text-white select-form-margin-top", style: "font-size:12px" if disabled.blank? %>
-        </div>
+
+      <% if @umrah_package.image_id.present? %>
+          <% if @image %>
+          <dd><%= image_tag(@umrah_package.image.picture.url, size: '150x150', class: "img-thumbnail", disabled: disabled) %></dd>
+          <% end  %>
+        <%= link_to "Change poster", edit_image_path(@umrah_package.image_id, is_from_package: true, package_id: @umrah_package.id), class: "btn btn-primary text-white select-form-margin-top", style: "font-size:12px" if disabled.blank? %>
+      <% else %>
+        <%= form.fields_for :image, @image_new do |image_form| %>
+          <div class="form-group select-form-margin-top">
+            <%= image_form.label :name, "Poster name" %>
+            <%= image_form.text_field :name, :class => 'form-control customer-form-wrapper' %>
+          </div>
+
+          <div class="form-group select-form-margin-top">
+            <%= image_form.label :picture, "Poster upload" %>
+            <%= image_form.file_field :picture, accept: 'image/jpeg,image/gif,image/png', :class => "form-control customer-form-wrapper" %>
+          </div>
+        <% end %>
       <% end %>
     </dl>
 
     <% if disabled %>
-      <%= link_to "Edit Package", edit_umrah_package_path(@umrah_package.id), class: "btn btn-primary text-white select-form-margin-top", style: "font-size:12px", id: "update-package" %>
+      <%= link_to "Edit Package", edit_admin_umrah_package_path(@umrah_package.id), class: "btn btn-primary text-white select-form-margin-top", style: "font-size:12px", id: "update-package" %>
     <% else %>
-      <% if @is_new_package %>
+      <% if @umrah_package.id.nil? %>
         <%= form.submit "Register New Packages", class: "btn btn-primary text-white select-form-margin-top", style: "font-size:12px", id: "update-package" %>
       <% else %>
         <%= form.submit "Update Package", { class: "btn btn-primary text-white select-form-margin-top", style: "font-size:12px", id: "update-package" } %>

@@ -38,12 +38,11 @@ class ImagesController < ApplicationController
   # POST /images or /images.json
   def create
     @image = Image.new(image_params)
-
     if params[:is_update_poster_from_package]
       umrah_package_id = params[:is_update_poster_from_package].to_i
       respond_to do |format|
         if @image.save
-          format.html { redirect_to umrah_package_path(umrah_package_id,package_id: umrah_package_id,image_id: @image.id,is_poster_for_package: !!params[:is_update_poster_from_package]), method: :get ,notice: "Image was successfully created." }
+          format.html { redirect_to admin_umrah_package_path(umrah_package_id,package_id: umrah_package_id,image_id: @image.id,is_poster_for_package: !!params[:is_update_poster_from_package]), method: :get ,notice: "Image was successfully created." }
           format.json { render :show, status: :created, location: @image }
         else
           format.html { render :new, status: :unprocessable_entity }
@@ -75,7 +74,7 @@ class ImagesController < ApplicationController
           if is_update_package_poster
             image = Image.find(params[:id])
             umrah_package_id = image.umrah_package.id
-            redirect_to edit_umrah_package_path(umrah_package_id), notice: "Image was successfully updated."
+            redirect_to edit_admin_umrah_package_path(umrah_package_id), notice: "Image was successfully updated."
           else
             redirect_to image_url(@image), notice: "Yes berjaya"
           end
@@ -111,6 +110,6 @@ class ImagesController < ApplicationController
     end
 
   def umrah_package
-    @umrah_package = UmrahPackage.all
+    @umrah_package = Admin::UmrahPackage.all
   end
 end

@@ -4,7 +4,7 @@ class Admin::UmrahCustomersController < ApplicationController
   before_action :get_customer_payment, only: %i[ edit show update destory ]
   before_action :get_umrah_package_detail, only: %i[ new edit show update destory ]
 
-  include Admin::UmrahCustomersHelper
+  include CostCalculatorHelper
 
   # GET /umrah_customers or /umrah_customers.json
   def index
@@ -77,7 +77,7 @@ class Admin::UmrahCustomersController < ApplicationController
   end
 
   def get_umrah_package_detail
-    @umrah_package = UmrahPackage.all
+    @umrah_package = Admin::UmrahPackage.all
   end
 
   # Only allow a list of trusted parameters through.
