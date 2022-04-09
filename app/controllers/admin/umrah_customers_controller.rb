@@ -4,7 +4,7 @@ class Admin::UmrahCustomersController < ApplicationController
   before_action :get_customer_payment, only: %i[ edit show update destory ]
   before_action :get_umrah_package_detail, only: %i[ new edit show update destory ]
 
-  include CostCalculatorHelper
+  include CostCalculatorConcern
 
   # GET /umrah_customers or /umrah_customers.json
   def index

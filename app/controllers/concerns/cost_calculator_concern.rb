@@ -1,4 +1,5 @@
-module CostCalculatorHelper
+module CostCalculatorConcern
+  extend ActiveSupport::Concern
 
   def calculate_customers_total_cost(umrah_customer)
     total_package_cost = umrah_customer.umrah_package.price * umrah_customer.total_participants || 0

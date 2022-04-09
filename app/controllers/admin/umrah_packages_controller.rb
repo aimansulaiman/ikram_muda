@@ -1,7 +1,7 @@
 class Admin::UmrahPackagesController < ApplicationController
   before_action :get_umrah_package_detail, only: %i[ show edit update destroy]
 
-  include UmrahPackageHelper
+  include UmrahPackageConcern
 
   def index
     @umrah_packages = Admin::UmrahPackage.all
@@ -29,12 +29,12 @@ class Admin::UmrahPackagesController < ApplicationController
   end
 
   def show
-    @image =  @umrah_package.is_image_available
+    @image =  @umrah_package.is_poster_available
   end
 
 
   def edit
-    @image =  @umrah_package.is_image_available
+    @image =  @umrah_package.is_poster_available
   end
 
   def update
