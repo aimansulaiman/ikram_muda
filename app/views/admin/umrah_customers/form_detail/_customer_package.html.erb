@@ -1,0 +1,38 @@
+<div style="width:100%;border-style:outset">
+  <div class="form-row col-md-10">
+    <div class="form-group col-md-7 customer-form-text-style">
+      <%= form.label :umrah_package_id, "Jenis Pakej" %>
+      <%= form.collection_select :umrah_package_id, @umrah_package, :id, :package_full_name, { include_blank: false }, { class: "form-control customer-form-wrapper", readonly: is_display_only } %>
+    </div>
+
+    <div class="form-group col-md-3 customer-form-text-style">
+      <%= form.label :date_registered, "Date Registered", style: 'font-size:12px' %>
+      <%= form.date_field :date_registered, class: "form-control customer-form-wrapper", value: @umrah_customer.date_registered, readonly: is_display_only %>
+    </div>
+
+    <div class="form-group col-md-2 customer-form-text-style">
+      <%= form.label :total_participants, "Total Participants", style: 'font-size:12px' %>
+      <%= form.text_field :total_participants, class: "form-control customer-form-wrapper", value: @umrah_customer.total_participants.to_s, readonly: is_display_only %>
+    </div>
+
+    <div class="form-group col-2 customer-form-text-style">
+      <%= form.label :flight_inbound_detail_id, "Departure Date", style: 'font-size:12px' %>
+      <%= form.collection_select :flight_inbound_detail_id, @flight_inbound_detail, :id, :flight_departure_date_from_saudi, { include_blank: false }, { class: "form-control customer-form-wrapper", readonly: is_display_only } %>
+    </div>
+
+    <div class="form-group col-2 customer-form-text-style">
+      <%= form.label :flight_outbound_detail_id, "Return Date", style: 'font-size:12px' %>
+      <%= form.collection_select :flight_outbound_detail_id, @flight_outbound_detail, :id, :flight_departure_date_from_kl, { include_blank: false }, { class: "form-control customer-form-wrapper", readonly: is_display_only } %>
+    </div>
+
+    <div class="form-group col-md-2 customer-form-text-style">
+      <%= form.label :total_paid, "Total Paid", style: 'font-size:12px' %>
+      <%= form.number_field :total_paid, class: "form-control customer-form-wrapper", value: @customer_total_paid, readonly: is_display_only %>
+    </div>
+
+    <div class="form-group col-md-2 customer-form-text-style">
+      <%= form.label :total_cost, "Total Cost", style: 'font-size:12px' %>
+      <span class= "form-control customer-form-wrapper" style="background-color:#C5C6D0"><%= @umrah_package_price %></span>
+    </div>
+  </div>
+</div>

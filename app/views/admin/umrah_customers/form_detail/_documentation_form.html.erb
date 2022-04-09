@@ -1,0 +1,77 @@
+<div style="width:100%;border-style:outset">
+  <div class="form-group row offset-md-1 customer-form-text-style">
+    <%= form.label :quotation_form, :class => 'control-label col-lg-2' %>
+    <% if @umrah_customer.quotation_form.present? %>
+      <% quotation_form = @umrah_customer.quotation_form.identifier %>
+      <%= link_to quotation_form, view_pdf_file_path(id: @umrah_customer.id, filename: quotation_form, form: 'quotation_form'), target: :_blank, title: "Click to open", class: "col-lg-10" %>
+    <% else %>
+      <% if is_display_only %>
+        <h3 class="col-lg-10">No file attached</h3>
+      <% end %>
+    <% end %>
+
+    <% if !is_display_only %>
+      <div class=" offset-md-2 col-lg-8 customer-form-text-style">
+        <%= form.file_field :quotation_form, accept: 'image/jpeg,image/gif,image/png,application/pdf', :class => 'form-control' %>
+      </div>
+      <%= form.error_span(:quotation_form) %>
+    <% end %>
+  </div>
+
+  <div class="form-group row offset-md-1 customer-form-text-style">
+    <%= form.label :registration_form, :class => 'control-label col-lg-2' %>
+    <% if @umrah_customer.registration_form.present? %>
+      <% registration_form = @umrah_customer.registration_form.identifier %>
+      <%= link_to registration_form, view_pdf_file_path(id: @umrah_customer.id, filename: registration_form, form: 'registration_form'), target: :_blank, title: "Click to open", class: "col-lg-10" %>
+    <% else %>
+      <% if is_display_only %>
+        <h3 class="col-lg-10">No file attached</h3>
+      <% end %>
+    <% end %>
+
+    <% if !is_display_only %>
+      <div class=" offset-md-2 col-lg-8 customer-form-text-style">
+        <%= form.file_field :registration_form, accept: 'image/jpeg,image/gif,image/png,application/pdf', :class => 'form-control' %>
+      </div>
+      <%= form.error_span(:registration_form) %>
+    <% end %>
+  </div>
+
+  <div class="form-group row offset-md-1 customer-form-text-style">
+    <%= form.label :deposit_payment, :class => 'control-label col-lg-2' %>
+    <% if @umrah_customer.deposit_payment.present? %>
+      <% deposit_payment = @umrah_customer.deposit_payment.identifier %>
+      <%= link_to deposit_payment, view_pdf_file_path(id: @umrah_customer.id, filename: deposit_payment, form: 'deposit_payment'), target: :_blank, title: "Click to open", class: "col-lg-10" %>
+    <% else %>
+      <% if is_display_only %>
+        <h3 class="col-lg-10">No file attached</h3>
+      <% end %>
+    <% end %>
+
+    <% if !is_display_only %>
+      <div class=" offset-md-2 col-lg-8 customer-form-text-style">
+        <%= form.file_field :deposit_payment, accept: 'image/jpeg,image/gif,image/png,application/pdf', :class => 'form-control' %>
+      </div>
+      <%= form.error_span(:deposit_payment) %>
+    <% end %>
+  </div>
+
+  <div class="form-group row offset-md-1 customer-form-text-style">
+    <%= form.label :final_payment, :class => 'control-label col-lg-2' %>
+    <% if @umrah_customer.final_payment.present? %>
+      <% final_payment = @umrah_customer.final_payment.identifier %>
+      <%= link_to final_payment, view_pdf_file_path(id: @umrah_customer.id, filename: final_payment, form: 'final_payment'), target: :_blank, title: "Click to open", class: "col-lg-10" %>
+    <% else %>
+      <% if is_display_only %>
+        <h3 class="col-lg-10">No file attached</h3>
+      <% end %>
+    <% end %>
+
+    <% if !is_display_only %>
+      <div class=" offset-md-2 col-lg-8 customer-form-text-style">
+        <%= form.file_field :final_payment, accept: 'image/jpeg,image/gif,image/png,application/pdf', :class => 'form-control' %>
+      </div>
+      <%= form.error_span(:final_payment) %>
+    <% end %>
+  </div>
+</div>

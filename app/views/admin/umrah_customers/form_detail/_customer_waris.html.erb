@@ -1,0 +1,18 @@
+<div style="width:100%;border-style:outset">
+
+  <div class="form-group col-10 customer-form-text-style">
+    <%= form.label :customer_waris_name, "Nama Waris" %>
+    <%= form.text_field :customer_waris_name, class: "form-control customer-form-wrapper", value: @umrah_customer.customer_waris_name, readonly: is_display_only %>
+  </div>
+
+  <div class="form-group col-10 customer-form-text-style">
+    <%= form.label :waris_address, "Alamat Waris" %>
+    <%= form.text_field :waris_address, class: "form-control customer-form-wrapper", value: @umrah_customer.waris_address, readonly: is_display_only %>
+  </div>
+
+  <div class="form-group col-2 customer-form-text-style">
+    <%= form.label :waris_tel, "Telefon Waris" %>
+    <%= form.text_field :waris_tel, class: "form-control customer-form-wrapper", value: @umrah_customer.waris_tel, readonly: is_display_only, id: 'customer_phone_number' %>
+    <p id="update_phone_error_message"></p>
+  </div>
+</div>
