@@ -16,9 +16,10 @@
               <th scope="col">No</th>
               <th scope="col">Package Name</th>
               <th scope="col">Package Type</th>
-              <th scope="col">Package Price</th>
-              <th scope="col">Package Hotel</th>
-              <th scope="col">Jemaah Per Pax</th>
+              <th scope="col">Price</th>
+              <th scope="col">Hotel Mekah</th>
+              <th scope="col">Hotel Madinah</th>
+              <th scope="col">Pax Per Room</th>
               <th scope="col"></th>
               <th scope="col"></th>
             </tr>
@@ -29,8 +30,9 @@
                 <th scope="row" class="counterCell"></th>
                 <td><%= package.title %></td>
                 <td><%= package.package_type %></td>
-                <td><%= package.price %></td>
-                <td><%= package.hotel %></td>
+                <td><%= calculate_package_price(package.price,"RM") %></td>
+                <td><%= package.hotel_mekah %></td>
+                <td><%= package.hotel_madinah %></td>
                 <td><%= package.rooms_per_pax %></td>
                 <td>
                   <%= link_to "View Detail", admin_umrah_package_path(package.id,is_poster_for_package:true), method: :get, class: "btn btn-primary btn-sm primary_button_text text-white", style:"font-size:12px" %>

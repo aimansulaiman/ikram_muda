@@ -1,7 +1,7 @@
 <div class="container form-group col-md-8">
   <% @image ||= nil %>
   <%= form_with(model: @umrah_package, id: "umrah-package-form") do |form| %>
-
+    <%= render partial: "admin/common/error_message", locals: { model: @umrah_package } %>
     <%= form.label :title, "Title" %>
     <%= form.text_field :title, placeholder: "e.g Umrah Safwa", class: "form-control customer-form-wrapper", disabled: disabled, id: "input" %>
 
@@ -21,14 +21,19 @@
       <div class="row col-md-12">
         <label class="col-form-label" style="margin-top:0.5rem">RM</label>
         <div class="col-sm-11">
-          <%= form.text_field :price, class: "form-control customer-form-wrapper", disabled: disabled %>
+          <%= form.text_field :price, value: calculate_package_price(@umrah_package.price,'') ,class: "form-control customer-form-wrapper", disabled: disabled, id:"package-price" %>
         </div>
       </div>
     </div>
     <br>
     <div class="form-group select-form-margin-top">
-      <%= form.label :hotel %>
-      <%= form.text_field :hotel, placeholder: "e.g Hotel Safwa", class: "form-control customer-form-wrapper", disabled: disabled %>
+      <%= form.label :hotel_mekah %>
+      <%= form.text_field :hotel_mekah, placeholder: "e.g Hotel Safwa", class: "form-control customer-form-wrapper", disabled: disabled %>
+    </div>
+
+    <div class="form-group select-form-margin-top">
+      <%= form.label :hotel_madinah %>
+      <%= form.text_field :hotel_madinah, placeholder: "e.g Hotel Nozol Royal Inn", class: "form-control customer-form-wrapper", disabled: disabled %>
     </div>
 
     <%= form.hidden_field :package_full_name, id: 'package_full_name' %>

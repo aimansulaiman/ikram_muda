@@ -1,13 +1,18 @@
 module CostCalculatorConcern
   extend ActiveSupport::Concern
 
-  def calculate_customers_total_cost(umrah_customer)
-    total_package_cost = umrah_customer.umrah_package.price * umrah_customer.total_participants || 0
-    ActionController::Base.helpers.number_to_currency(total_package_cost, :unit => "RM")
+  def calculate_customers_total_cost(customer)
+    total_package_cost = customer.umrah_package.price * customer.total_participants || 0
+    render_in_money_terms(total_package_cost,"RM")
   end
 
-  def get_total_paid
-    @umrah_customer.total_paid.to_s
+  def calculate_total_paid(customer)
+    total_paid = customer.total_paid
+    render_in_money_terms(total_paid,"")
+  end
+
+  def render_in_money_terms(cost,currency)
+    ActionController::Base.helpers.number_to_currency(cost, :unit => currency)
   end
 
 end

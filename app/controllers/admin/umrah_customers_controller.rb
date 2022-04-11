@@ -1,7 +1,6 @@
 class Admin::UmrahCustomersController < ApplicationController
   before_action :set_umrah_customer, only: %i[ show edit update destroy ]
   before_action :get_flight_details, only: %i[ show new edit update destroy ]
-  before_action :get_customer_payment, only: %i[ edit show update destory ]
   before_action :get_umrah_package_detail, only: %i[ new edit show update destory ]
 
   include CostCalculatorConcern
@@ -14,6 +13,7 @@ class Admin::UmrahCustomersController < ApplicationController
   # GET /umrah_customers/1 or /umrah_customers/1.json
   def show
     @umrah_package_price =  calculate_customers_total_cost(@umrah_customer)
+    @customer_total_paid =  calculate_total_paid(@umrah_customer)
     respond_to do |format|
       format.html { render :show, locals: { umrah_customer_params: false } }
     end
@@ -28,6 +28,7 @@ class Admin::UmrahCustomersController < ApplicationController
   # GET /umrah_customers/1/edit
   def edit
     @umrah_package_price = calculate_customers_total_cost(@umrah_customer)
+    @customer_total_paid =  calculate_total_paid(@umrah_customer)
   end
 
   # POST /umrah_customers or /umrah_customers.json
@@ -82,11 +83,31 @@ class Admin::UmrahCustomersController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def umrah_customer_params
-    params.require(:admin_umrah_customer).permit(:customer_name, :house_tel, :home_address, :total_participants, :date_registered, :total_paid, :total_cost, :flight_inbound_detail_id, :flight_outbound_detail_id, :quotation_form, :registration_form, :deposit_payment, :final_payment, :umrah_package_id, :customer_mahram, :mobile_tel, :customer_waris_name, :waris_address, :waris_tel, :identification_card, :gender, :citizenship)
-  end
-
-  def get_customer_payment
-    @customer_total_paid = get_total_paid
+    params
+      .require(:admin_umrah_customer)
+      .permit(:customer_name,
+              :house_tel,
+              :home_address,
+              :total_participants,
+              :date_registered,
+              :total_paid,
+              :total_cost,
+              :flight_inbound_detail_id,
+              :flight_outbound_detail_id,
+              :quotation_form,
+              :registration_form,
+              :deposit_payment,
+              :final_payment,
+              :umrah_package_id,
+              :customer_mahram,
+              :mobile_tel,
+              :customer_waris_name,
+              :waris_address,
+              :waris_tel,
+              :identification_card,
+              :gender,
+              :citizenship
+      )
   end
 
   def set_umrah_customer

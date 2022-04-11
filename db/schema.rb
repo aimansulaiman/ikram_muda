@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_31_090534) do
+ActiveRecord::Schema.define(version: 2022_04_11_062745) do
 
   create_table "flight_inbound_details", force: :cascade do |t|
     t.date "flight_departure_date_from_saudi"
@@ -43,8 +43,8 @@ ActiveRecord::Schema.define(version: 2022_03_31_090534) do
     t.string "home_address"
     t.integer "total_participants"
     t.date "date_registered"
-    t.float "total_paid"
-    t.float "total_cost"
+    t.string "total_paid"
+    t.string "total_cost"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "flight_inbound_detail_id"
@@ -70,13 +70,14 @@ ActiveRecord::Schema.define(version: 2022_03_31_090534) do
   create_table "umrah_packages", force: :cascade do |t|
     t.string "title"
     t.string "package_type"
-    t.float "price"
-    t.string "hotel"
+    t.string "price"
+    t.string "hotel_mekah"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "image_id"
     t.integer "rooms_per_pax"
     t.string "package_full_name"
+    t.string "hotel_madinah"
     t.index ["image_id"], name: "index_umrah_packages_on_image_id"
   end
 

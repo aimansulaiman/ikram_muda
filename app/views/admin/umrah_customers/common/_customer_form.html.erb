@@ -1,19 +1,20 @@
+<%= render partial: "admin/common/error_message", locals: { model: @umrah_customer } %>
 <%= form_with(model: @umrah_customer, multipart: true) do |form| %>
-
   <div class="form-row customer-form-wrapper">
 
-    <h1>Maklumat Jemaah</h1>
-    <%= render partial: "admin/umrah_customers/form_detail/customer_data", locals: { form: form, is_display_only: is_display_only} %>
+    <h1 class="form-title-style">Maklumat Jemaah</h1>
+    <%= render partial: "admin/umrah_customers/form_detail/customer_data", locals: { form: form, is_display_only: is_display_only } %>
     <br>
 
     <h1 class="form-title-style">Maklumat Waris</h1>
-    <%= render partial: "admin/umrah_customers/form_detail/customer_waris", locals: { form: form, is_display_only: is_display_only} %>
+    <%= render partial: "admin/umrah_customers/form_detail/customer_waris", locals: { form: form, is_display_only: is_display_only } %>
 
     <h1 class="form-title-style">Maklumat Pakej</h1>
-    <%= render partial: "admin/umrah_customers/form_detail/customer_package", locals: { form: form, is_display_only: is_display_only} %>
+    <%= render partial: "admin/umrah_customers/form_detail/customer_package", locals: { form: form, is_display_only: is_display_only } %>
 
     <h1 class="form-title-style">Dokumentasi</h1>
-    <%= render partial: "admin/umrah_customers/form_detail/documentation_form", locals: { form: form, is_display_only: is_display_only} %>
+    <%= render partial: "admin/umrah_customers/form_detail/documentation_form", locals: { form: form, is_display_only: is_display_only } %>
+
 
   </div>
 

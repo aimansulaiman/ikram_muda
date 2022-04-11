@@ -1,0 +1,15 @@
+<% if model.errors.any? %>
+  <div class="alert alert-danger" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true" style="font-size: 20px;color:white">&times;</span>
+    </button>
+    <h2 class="alert-heading">The following errors prevented it from being saved:</h2>
+    <ul>
+      <% model.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+
+  </div>
+<% end %>
+

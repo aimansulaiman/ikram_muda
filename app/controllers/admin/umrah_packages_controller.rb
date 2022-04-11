@@ -29,17 +29,23 @@ class Admin::UmrahPackagesController < ApplicationController
   end
 
   def show
-    @image =  @umrah_package.is_poster_available
+    @image = @umrah_package.is_poster_available
   end
 
-
   def edit
-    @image =  @umrah_package.is_poster_available
+    @image = @umrah_package.is_poster_available
   end
 
   def update
-    @umrah_package.update(umrah_package_params)
-    redirect_to admin_umrah_packages_path
+    respond_to do |format|
+      if @umrah_package.update(umrah_package_params)
+        format.html { redirect_to admin_umrah_packages_path, notice: "Umrah customer was successfully updated." }
+        format.json { render :show, status: :ok, location: @umrah_customer }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @umrah_package.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def destroy
@@ -54,7 +60,19 @@ class Admin::UmrahPackagesController < ApplicationController
   end
 
   def umrah_package_params
-    params.require(:admin_umrah_package).permit(:title, :package_type, :price, :hotel , :image_id, :rooms_per_pax, :package_full_name, image_attributes:[:name,:picture] )
+    params
+      .require(:admin_umrah_package).
+      permit(
+        :title,
+              :package_type,
+              :price,
+              :hotel_mekah,
+              :hotel_madinah,
+              :image_id,
+              :rooms_per_pax,
+              :package_full_name,
+              image_attributes: [:name, :picture]
+            )
   end
 
   def get_package_images

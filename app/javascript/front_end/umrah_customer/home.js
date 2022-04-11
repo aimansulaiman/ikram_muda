@@ -40,7 +40,21 @@ $(document).ready(function () {
         $("input#package_full_name").val(`${umrah_title} ${pax_per_room} pax/room`)
     });
 
+    $("#package-price").change(function () {
+        var input = $(this);
+        var val = input.val();
+
+        var regex = /^[0-9]*$/g;
+        var test = val.match(regex);
+
+
+        console.log('test ==', test)
+
+    });
+
+
 })
+
 
 // $(document).on('turbolinks:load', function() {
 //    console.log('in turbolinks:load')
