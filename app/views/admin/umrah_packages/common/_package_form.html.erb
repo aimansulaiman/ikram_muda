@@ -2,7 +2,7 @@
   <% @image ||= nil %>
   <%= form_with(model: @umrah_package, id: "umrah-package-form") do |form| %>
     <%= render partial: "admin/common/error_message", locals: { model: @umrah_package } %>
-    <%= form.label :title, "Title" %>
+    <%= form.label :title, "Title"%><span>*</span>
     <%= form.text_field :title, placeholder: "e.g Umrah Safwa", class: "form-control customer-form-wrapper", disabled: disabled, id: "input" %>
 
     <div class="form-group select-form-margin-top">
@@ -16,7 +16,7 @@
     </div>
 
     <div class="form-group">
-      <%= form.label :price, "Price" %>
+      <%= form.label :price, "Price" %><span>*</span>
       <br>
       <div class="row col-md-12">
         <label class="col-form-label" style="margin-top:0.5rem">RM</label>
@@ -27,16 +27,14 @@
     </div>
     <br>
     <div class="form-group select-form-margin-top">
-      <%= form.label :hotel_mekah %>
+      <%= form.label :hotel_mekah %><span>*</span>
       <%= form.text_field :hotel_mekah, placeholder: "e.g Hotel Safwa", class: "form-control customer-form-wrapper", disabled: disabled %>
     </div>
 
     <div class="form-group select-form-margin-top">
-      <%= form.label :hotel_madinah %>
+      <%= form.label :hotel_madinah %><span>*</span>
       <%= form.text_field :hotel_madinah, placeholder: "e.g Hotel Nozol Royal Inn", class: "form-control customer-form-wrapper", disabled: disabled %>
     </div>
-
-    <%= form.hidden_field :package_full_name, id: 'package_full_name' %>
 
     <dl class="form-group">
       <dd>

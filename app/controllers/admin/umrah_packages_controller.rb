@@ -14,8 +14,6 @@ class Admin::UmrahPackagesController < ApplicationController
 
   def create
     @umrah_package = Admin::UmrahPackage.create(umrah_package_params)
-    package_full_name = get_full_package_name(@umrah_package)
-    @umrah_package.update(package_full_name: package_full_name)
 
     respond_to do |format|
       if @umrah_package.save
@@ -70,7 +68,6 @@ class Admin::UmrahPackagesController < ApplicationController
               :hotel_madinah,
               :image_id,
               :rooms_per_pax,
-              :package_full_name,
               image_attributes: [:name, :picture]
             )
   end

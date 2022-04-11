@@ -1,7 +1,7 @@
 class Admin::UmrahCustomersController < ApplicationController
   before_action :set_umrah_customer, only: %i[ show edit update destroy ]
-  before_action :get_flight_details, only: %i[ show new edit update destroy ]
-  before_action :get_umrah_package_detail, only: %i[ new edit show update destory ]
+  # before_action :get_flight_details, only: %i[ show new edit update destroy ]
+  # before_action :get_umrah_package_detail, only: %i[ new edit show update destory ]
 
   include CostCalculatorConcern
 
@@ -72,14 +72,14 @@ class Admin::UmrahCustomersController < ApplicationController
   private
 
   # Use callbacks to share common setup or constraints between actions.
-  def get_flight_details
-    @flight_inbound_detail = FlightInboundDetail.all
-    @flight_outbound_detail = FlightOutboundDetail.all
-  end
+  # def get_flight_details
+  #   @flight_inbound_detail = FlightInboundDetail.all
+  #   @flight_outbound_detail = FlightOutboundDetail.all
+  # end
 
-  def get_umrah_package_detail
-    @umrah_package = Admin::UmrahPackage.all
-  end
+  # def get_umrah_package_detail
+  #   @umrah_package = Admin::UmrahPackage.all
+  # end
 
   # Only allow a list of trusted parameters through.
   def umrah_customer_params

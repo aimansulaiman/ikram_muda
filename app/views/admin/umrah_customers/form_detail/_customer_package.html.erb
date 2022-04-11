@@ -26,7 +26,7 @@
     </div>
 
     <div class="form-group col-md-2 customer-form-text-style">
-      <%= form.label :total_paid, "Total Paid (RM)", style: 'font-size:12px' %>
+      <%= form.label :total_paid, "Total Paid (RM)", style: 'font-size:12px' %><span>*</span>
       <%= form.text_field :total_paid, class: "form-control customer-form-wrapper", value: @customer_total_paid, readonly: is_display_only %>
     </div>
 

@@ -1,5 +1,5 @@
 <div>
-  <%= render partial:"layouts/navbar" %>
+  <%= render partial: "layouts/navbar" %>
   <div class="row" style="margin-top:100px">
     <div class="col-md-2" style="margin-left:50px">
       <%= render 'layouts/sidebar' %>
@@ -30,26 +30,28 @@
                 <th scope="row" class="counterCell"></th>
                 <td><%= package.title %></td>
                 <td><%= package.package_type %></td>
-                <td><%= calculate_package_price(package.price,"RM") %></td>
+                <td><%= calculate_package_price(package.price, "RM") %></td>
                 <td><%= package.hotel_mekah %></td>
                 <td><%= package.hotel_madinah %></td>
                 <td><%= package.rooms_per_pax %></td>
                 <td>
-                  <%= link_to "View Detail", admin_umrah_package_path(package.id,is_poster_for_package:true), method: :get, class: "btn btn-primary btn-sm primary_button_text text-white", style:"font-size:12px" %>
+                  <%= link_to "View Detail", admin_umrah_package_path(package.id, is_poster_for_package: true), method: :get, class: "btn btn-primary btn-sm primary_button_text text-white", style: "font-size:12px" %>
                 </td>
                 <td>
-                  <%= link_to "Delete Package", admin_umrah_package_path(package.id), method: :delete, class: "btn btn-primary btn-sm primary_button_text text-white", style:"font-size:12px" %>
+                  <% if package.umrah_customer.blank? %>
+                    <%= link_to "Delete Package", admin_umrah_package_path(package.id), method: :delete, class: "btn btn-primary btn-sm primary_button_text text-white", style: "font-size:12px" %>
+                  <% end %>
                 </td>
               </tr>
             <% end %>
             </tbody>
           </table>
         <% else %>
-          <%= link_to "Create New Package", new_admin_umrah_package_path, method: :get, class: "btn btn-primary btn-sm primary_button_text text-white", style:"font-size:12px" %>
+          <%= link_to "Create New Package", new_admin_umrah_package_path, method: :get, class: "btn btn-primary btn-sm primary_button_text text-white", style: "font-size:12px" %>
         <% end %>
       </div>
       <br>
-      <%= link_to 'New Umrah Package', new_admin_umrah_package_path, class: "btn btn-primary btn-sm primary_button_text text-white", style:"font-size:12px" %>
+      <%= link_to 'New Umrah Package', new_admin_umrah_package_path, class: "btn btn-primary btn-sm primary_button_text text-white", style: "font-size:12px" %>
     </div>
   </div>
 </div>

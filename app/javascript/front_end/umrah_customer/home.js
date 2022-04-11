@@ -34,11 +34,11 @@ $(document).ready(function () {
         }
     });
 
-    $("#umrah-package-form").submit(function () {
-        var umrah_title = $("#input").val()
-        var pax_per_room = $("#pax-per-room").val()
-        $("input#package_full_name").val(`${umrah_title} ${pax_per_room} pax/room`)
-    });
+    // $("#umrah-package-form").submit(function () {
+    //     var umrah_title = $("#input").val()
+    //     var pax_per_room = $("#pax-per-room").val()
+    //     $("input#package_full_name").val(`${umrah_title} ${pax_per_room} pax/room`)
+    // });
 
     $("#package-price").change(function () {
         var input = $(this);
