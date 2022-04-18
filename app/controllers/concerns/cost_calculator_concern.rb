@@ -7,7 +7,7 @@ module CostCalculatorConcern
   end
 
   def calculate_total_paid(customer)
-    total_paid = customer.total_paid
+    total_paid = customer.total_paid.gsub(",","")
     render_in_money_terms(total_paid,"")
   end
 
