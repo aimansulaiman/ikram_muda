@@ -1,5 +1,6 @@
 class Admin::UmrahCustomer < ApplicationRecord
   attribute :total_participants, :integer, default: 1
+  enum is_full_payment_made: { partial_payment: 0, full_payment: 1, extra_payment:2 }
 
   attributes_to_validate = [
     :customer_name,
@@ -27,11 +28,23 @@ class Admin::UmrahCustomer < ApplicationRecord
   mount_uploader :deposit_payment, AttachmentUploader
   mount_uploader :final_payment, AttachmentUploader
 
+  def payment_status
+    total_paid = self.total_paid.gsub(",","")
+    is_full_payment_made = total_paid.to_i - self.umrah_package.price.to_i
+    if is_full_payment_made == 0
+      "Full payment made"
+    elsif is_full_payment_made < 0
+      "Partial payment made"
+    elsif is_full_payment_made > 0
+      "Extra payment made"
+    end
+  end
+
   private
 
   def price_format
     total_paid = read_attribute_before_type_cast('total_paid')
-    total_paid_no_comma = total_paid.gsub(',','')
+    total_paid_no_comma = total_paid.gsub(',', '')
 
     unless total_paid_no_comma =~ PRICE_REGEXP
       errors.add('total_paid', 'must match the correct format e.g 6900.00')

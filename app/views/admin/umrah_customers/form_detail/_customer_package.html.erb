@@ -32,7 +32,19 @@
 
     <div class="form-group col-md-2 customer-form-text-style">
       <%= form.label :total_cost, "Total Cost", style: 'font-size:12px' %>
-      <span class= "form-control customer-form-wrapper" style="background-color:#C5C6D0"><%= @umrah_package_price %></span>
+      <span class="form-control customer-form-wrapper" style="background-color:#C5C6D0"><%= @umrah_package_price %></span>
+    </div>
+
+    <div class="form-group col-md-2 customer-form-text-style">
+      <%= form.label "Payment Status", style: 'font-size:12px' %>
+      <% payment_status = @umrah_customer.payment_status %>
+      <% if payment_status == "Full payment made" %>
+        <span class="form-control customer-form-wrapper" style="background-color:#C5C6D0">Full Payment</span>
+      <% elsif payment_status == "Partial payment made" %>
+        <span class="form-control customer-form-wrapper" style="background-color:#C5C6D0">Partial Payment</span>
+      <% elsif payment_status == "Extra payment made" %>
+        <span class="form-control customer-form-wrapper" style="background-color:#C5C6D0">Extra Payment</span>
+      <% end %>
     </div>
   </div>
 </div>

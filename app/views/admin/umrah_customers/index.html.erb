@@ -15,6 +15,7 @@
             <th scope="col">Customer Name</th>
             <th scope="col">Departure Date</th>
             <th scope="col">Return Date</th>
+            <th scope="col">Payment Status</th>
             <th scope="col"></th>
             <th scope="col"></th>
           </tr>
@@ -26,6 +27,7 @@
               <td><%= customer.customer_name %></td>
               <td class="text-center"><%= customer.flight_outbound_detail.flight_departure_date_from_kl %></td>
               <td class="text-center"><%= customer.flight_inbound_detail.flight_departure_date_from_saudi %></td>
+              <td class="text-center"><%= get_payment_status(customer.is_full_payment_made) %></td>
               <td>
                 <%= link_to "View Detail", admin_umrah_customer_path(customer.id), class: "btn-sm btn-primary primary_button_text text-white", style: "font-size:12px" %>
               </td>

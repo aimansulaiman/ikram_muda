@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_11_062745) do
+ActiveRecord::Schema.define(version: 2022_04_14_014831) do
 
   create_table "flight_inbound_details", force: :cascade do |t|
     t.date "flight_departure_date_from_saudi"
@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 2022_04_11_062745) do
     t.string "identification_card"
     t.string "gender"
     t.string "citizenship"
+    t.integer "is_full_payment_made", default: 0
     t.index ["flight_inbound_detail_id"], name: "index_umrah_customers_on_flight_inbound_detail_id"
     t.index ["flight_outbound_detail_id"], name: "index_umrah_customers_on_flight_outbound_detail_id"
     t.index ["umrah_package_id"], name: "index_umrah_customers_on_umrah_package_id"

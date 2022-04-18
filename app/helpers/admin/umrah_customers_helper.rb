@@ -10,6 +10,16 @@ module Admin
       @umrah_customer.total_paid.to_s
     end
 
+    def get_payment_status(status)
+      if status == "partial_payment"
+        "Partial Payment"
+      elsif status == "full_payment"
+        "Full Payment"
+      else
+        "Extra Payment"
+      end
+    end
+
   end
 end
 

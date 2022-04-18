@@ -1,7 +1,5 @@
 class Admin::UmrahCustomersController < ApplicationController
   before_action :set_umrah_customer, only: %i[ show edit update destroy ]
-  # before_action :get_flight_details, only: %i[ show new edit update destroy ]
-  # before_action :get_umrah_package_detail, only: %i[ new edit show update destory ]
 
   include CostCalculatorConcern
 
@@ -12,8 +10,9 @@ class Admin::UmrahCustomersController < ApplicationController
 
   # GET /umrah_customers/1 or /umrah_customers/1.json
   def show
-    @umrah_package_price =  calculate_customers_total_cost(@umrah_customer)
-    @customer_total_paid =  calculate_total_paid(@umrah_customer)
+    update_payment_status
+    @umrah_package_price = calculate_customers_total_cost(@umrah_customer)
+    @customer_total_paid = calculate_total_paid(@umrah_customer)
     respond_to do |format|
       format.html { render :show, locals: { umrah_customer_params: false } }
     end
@@ -28,13 +27,13 @@ class Admin::UmrahCustomersController < ApplicationController
   # GET /umrah_customers/1/edit
   def edit
     @umrah_package_price = calculate_customers_total_cost(@umrah_customer)
-    @customer_total_paid =  calculate_total_paid(@umrah_customer)
+    @customer_total_paid = calculate_total_paid(@umrah_customer)
   end
 
   # POST /umrah_customers or /umrah_customers.json
   def create
     @umrah_customer = Admin::UmrahCustomer.new(umrah_customer_params)
-
+    update_payment_status
     respond_to do |format|
       if @umrah_customer.save
         format.html { redirect_to admin_umrah_customers_path, notice: "Umrah customer was successfully created." }
@@ -48,6 +47,7 @@ class Admin::UmrahCustomersController < ApplicationController
 
   # PATCH/PUT /umrah_customers/1 or /umrah_customers/1.json
   def update
+    byebug
     respond_to do |format|
       if @umrah_customer.update(umrah_customer_params)
         format.html { redirect_to admin_umrah_customer_path(@umrah_customer.id), notice: "Umrah customer was successfully updated." }
@@ -70,16 +70,6 @@ class Admin::UmrahCustomersController < ApplicationController
   end
 
   private
-
-  # Use callbacks to share common setup or constraints between actions.
-  # def get_flight_details
-  #   @flight_inbound_detail = FlightInboundDetail.all
-  #   @flight_outbound_detail = FlightOutboundDetail.all
-  # end
-
-  # def get_umrah_package_detail
-  #   @umrah_package = Admin::UmrahPackage.all
-  # end
 
   # Only allow a list of trusted parameters through.
   def umrah_customer_params
@@ -106,12 +96,28 @@ class Admin::UmrahCustomersController < ApplicationController
               :waris_tel,
               :identification_card,
               :gender,
-              :citizenship
+              :citizenship,
+              :is_full_payment_made
       )
   end
 
   def set_umrah_customer
     @umrah_customer = Admin::UmrahCustomer.find(params[:id])
+  end
+
+  def update_payment_status
+    total_paid = @umrah_customer.total_paid.gsub(","," ")
+    is_full_payment_made = total_paid.to_i - @umrah_customer.umrah_package.price.to_i
+
+    if is_full_payment_made == 0
+      @umrah_customer.full_payment!
+    elsif is_full_payment_made < 0
+      @umrah_customer.partial_payment!
+    else
+      @umrah_customer.extra_payment!
+    end
+
+    @umrah_customer.save
   end
 
 end

@@ -1,4 +1,4 @@
-Rails.application.routes.draw do
+  Rails.application.routes.draw do
   resources :images do
     # get "update_package", to: "images#new_wp", on: :new
   end
