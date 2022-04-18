@@ -29,14 +29,16 @@ class Admin::UmrahCustomer < ApplicationRecord
   mount_uploader :final_payment, AttachmentUploader
 
   def payment_status
-    total_paid = self.total_paid.gsub(",","")
-    is_full_payment_made = total_paid.to_i - self.umrah_package.price.to_i
-    if is_full_payment_made == 0
-      "Full payment made"
-    elsif is_full_payment_made < 0
-      "Partial payment made"
-    elsif is_full_payment_made > 0
-      "Extra payment made"
+    if self.total_paid.present?
+      total_paid = self.total_paid.gsub(",", "")
+      is_full_payment_made = total_paid.to_i - self.umrah_package.price.to_i
+      if is_full_payment_made == 0
+        "Full payment made"
+      elsif is_full_payment_made < 0
+        "Partial payment made"
+      elsif is_full_payment_made > 0
+        "Extra payment made"
+      end
     end
   end
 

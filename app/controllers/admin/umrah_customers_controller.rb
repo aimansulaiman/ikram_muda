@@ -106,7 +106,8 @@ class Admin::UmrahCustomersController < ApplicationController
   end
 
   def update_payment_status
-    total_paid = @umrah_customer.total_paid.gsub(","," ")
+    total_paid_in_money_format = render_in_money_terms(@umrah_customer.total_paid,"")
+    total_paid = total_paid_in_money_format.gsub(",","")
     is_full_payment_made = total_paid.to_i - @umrah_customer.umrah_package.price.to_i
 
     if is_full_payment_made == 0
