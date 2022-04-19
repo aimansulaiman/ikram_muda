@@ -1,0 +1,10 @@
+<%= form.label "Payment Status", style: 'font-size:12px' %>
+<% if payment_status == "Full payment made" %>
+  <span class="form-control customer-form-wrapper" style="background-color:#98FF98">Full Payment</span>
+<% elsif payment_status == "Partial payment made" %>
+  <span class="form-control customer-form-wrapper" style="background-color:#FFDB58">Partial Payment</span>
+<% elsif payment_status == "Extra payment made" %>
+  <span class="form-control customer-form-wrapper" style="background-color:#D0312D">Extra Payment</span>
+<% elsif payment_status == "No payment" %>
+  <span class="form-control customer-form-wrapper" style="background-color:#D0312D">No Payment</span>
+<% end %>`

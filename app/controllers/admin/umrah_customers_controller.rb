@@ -47,7 +47,6 @@ class Admin::UmrahCustomersController < ApplicationController
 
   # PATCH/PUT /umrah_customers/1 or /umrah_customers/1.json
   def update
-    byebug
     respond_to do |format|
       if @umrah_customer.update(umrah_customer_params)
         format.html { redirect_to admin_umrah_customer_path(@umrah_customer.id), notice: "Umrah customer was successfully updated." }

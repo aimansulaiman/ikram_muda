@@ -27,24 +27,16 @@
 
     <div class="form-group col-md-2 customer-form-text-style">
       <%= form.label :total_paid, "Total Paid (RM)", style: 'font-size:12px' %><span>*</span>
-      <%= form.text_field :total_paid, class: "form-control customer-form-wrapper", value: @customer_total_paid, readonly: is_display_only %>
+      <%= form.text_field :total_paid, class: "form-control customer-form-wrapper", value: calculate_total_paid(@umrah_customer), readonly: is_display_only %>
     </div>
 
     <div class="form-group col-md-2 customer-form-text-style">
       <%= form.label :total_cost, "Total Cost", style: 'font-size:12px' %>
-      <span class="form-control customer-form-wrapper" style="background-color:#C5C6D0"><%= @umrah_package_price %></span>
+      <span class="form-control customer-form-wrapper" style="background-color:#C5C6D0"><%= calculate_customers_total_cost(@umrah_customer) %></span>
     </div>
 
     <div class="form-group col-md-2 customer-form-text-style">
-      <%= form.label "Payment Status", style: 'font-size:12px' %>
-      <% payment_status = @umrah_customer.payment_status %>
-      <% if payment_status == "Full payment made" %>
-        <span class="form-control customer-form-wrapper" style="background-color:#C5C6D0">Full Payment</span>
-      <% elsif payment_status == "Partial payment made" %>
-        <span class="form-control customer-form-wrapper" style="background-color:#C5C6D0">Partial Payment</span>
-      <% elsif payment_status == "Extra payment made" %>
-        <span class="form-control customer-form-wrapper" style="background-color:#C5C6D0">Extra Payment</span>
-      <% end %>
+      <%= render partial: 'admin/umrah_customers/common/payment_status' , locals: { form: form ,  payment_status: @umrah_customer.payment_status } %>
     </div>
   </div>
 </div>

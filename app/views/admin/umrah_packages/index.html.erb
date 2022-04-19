@@ -39,7 +39,7 @@
                 </td>
                 <td>
                   <% if package.umrah_customer.blank? %>
-                    <%= link_to "Delete Package", admin_umrah_package_path(package.id), method: :delete, class: "btn btn-primary btn-sm primary_button_text text-white", style: "font-size:12px" %>
+                    <%= link_to "Delete Package", admin_umrah_package_path(package.id), method: :delete, class: "btn btn-danger btn-sm primary_button_text text-white", style: "font-size:12px" %>
                   <% end %>
                 </td>
               </tr>

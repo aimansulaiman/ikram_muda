@@ -23,6 +23,7 @@ class Admin::UmrahPackage < ApplicationRecord
 
   private
   def price_format
+    byebug
     package_price = read_attribute_before_type_cast('price')
     price_with_no_comma = package_price.gsub(',','')
 

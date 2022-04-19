@@ -2,7 +2,6 @@
 <%= form_with(model: @umrah_customer, multipart: true) do |form| %>
   <div class="form-row customer-form-wrapper">
 
-    <h1 class="form-title-style">Maklumat Jemaah</h1>
     <%= render partial: "admin/umrah_customers/form_detail/customer_data", locals: { form: form, is_display_only: is_display_only } %>
     <br>
 
