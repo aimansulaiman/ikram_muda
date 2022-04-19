@@ -32,6 +32,7 @@ class Admin::UmrahCustomer < ApplicationRecord
     if self.total_paid.present?
       total_paid = self.total_paid.gsub(",", "")
       is_full_payment_made = total_paid.to_i - self.umrah_package.price.to_i
+      byebug
       if total_paid.to_i == 0
         "No payment"
       elsif is_full_payment_made == 0
@@ -49,7 +50,7 @@ class Admin::UmrahCustomer < ApplicationRecord
   def price_format
     total_paid = read_attribute_before_type_cast('total_paid')
     total_paid_no_comma = total_paid.gsub(',', '')
-    byebug
+
     unless total_paid_no_comma =~ PRICE_REGEXP
       errors.add('total_paid', 'must match the correct format e.g 6900.00')
     end

@@ -10,16 +10,9 @@ module Admin
       @umrah_customer.total_paid.to_s
     end
 
-    def get_payment_status(status)
-      if status == "partial_payment"
-        "Partial Payment"
-      elsif status == "full_payment"
-        "Full Payment"
-      elsif status == "extra_payment"
-        "Extra Payment"
-      else
-        "No Payment"
-      end
+    def render_payment_status(status)
+      status.split("_").map { |status| status.capitalize
+      }.join(" ")
     end
 
   end

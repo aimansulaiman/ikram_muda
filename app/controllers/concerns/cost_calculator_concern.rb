@@ -5,8 +5,12 @@ module CostCalculatorConcern
     customer.umrah_package ||= Admin::UmrahPackage.first
     total_package_cost = customer.umrah_package.price * customer.total_participants
     render_in_money_terms(total_package_cost, "RM")
-
   end
+
+  # def render_payment_status(status)
+  #   status.split("_").map { |status| status.capitalize
+  #   }.join(" ")
+  # end
 
   def calculate_total_paid(customer)
     customer.total_paid ||= 0
