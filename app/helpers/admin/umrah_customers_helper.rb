@@ -15,8 +15,10 @@ module Admin
         "Partial Payment"
       elsif status == "full_payment"
         "Full Payment"
-      else
+      elsif status == "extra_payment"
         "Extra Payment"
+      else
+        "No Payment"
       end
     end
 

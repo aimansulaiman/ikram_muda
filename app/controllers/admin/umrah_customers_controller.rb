@@ -33,7 +33,6 @@ class Admin::UmrahCustomersController < ApplicationController
   # POST /umrah_customers or /umrah_customers.json
   def create
     @umrah_customer = Admin::UmrahCustomer.new(umrah_customer_params)
-    update_payment_status
     respond_to do |format|
       if @umrah_customer.save
         format.html { redirect_to admin_umrah_customers_path, notice: "Umrah customer was successfully created." }
