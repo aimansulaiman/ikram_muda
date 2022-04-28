@@ -26,6 +26,7 @@ class Admin::UmrahCustomersController < ApplicationController
 
   # GET /umrah_customers/1/edit
   def edit
+    @umrah_customer ||= Admin::UmrahCustomer.new
     @umrah_package_price = calculate_customers_total_cost(@umrah_customer)
     @customer_total_paid = calculate_total_paid(@umrah_customer)
   end
@@ -46,6 +47,7 @@ class Admin::UmrahCustomersController < ApplicationController
 
   # PATCH/PUT /umrah_customers/1 or /umrah_customers/1.json
   def update
+    @umrah_customer.update_umrah_status(params[:admin_umrah_customer][:umrah_status_attr])
     respond_to do |format|
       if @umrah_customer.update(umrah_customer_params)
         format.html { redirect_to admin_umrah_customer_path(@umrah_customer.id), notice: "Umrah customer was successfully updated." }
@@ -95,7 +97,8 @@ class Admin::UmrahCustomersController < ApplicationController
               :identification_card,
               :gender,
               :citizenship,
-              :is_full_payment_made
+              :is_full_payment_made,
+              :umrah_status
       )
   end
 

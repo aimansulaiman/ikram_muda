@@ -10,9 +10,14 @@ module Admin
       @umrah_customer.total_paid.to_s
     end
 
-    def render_payment_status(status)
-      status.split("_").map { |status| status.capitalize
-      }.join(" ")
+    def render_status(status)
+      if status.kind_of?(Array)
+        status.map { |params| params.split("_").map { |status| status.capitalize
+        }.join(" ")}
+      else
+        status.split("_").map { |status| status.capitalize
+        }.join(" ")
+      end
     end
 
   end

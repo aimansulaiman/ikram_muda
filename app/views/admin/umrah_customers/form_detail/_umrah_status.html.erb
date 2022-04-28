@@ -1,0 +1,8 @@
+<div style="width:100%;border-style:outset">
+  <div class="form-group col-md-7 customer-form-text-style">
+    <div class="form-row col-md-10">
+      <%= form.label :umrah_status_attr, "Umrah Statuss" %>
+      <%= form.select :umrah_status_attr, Admin::UmrahCustomer.umrah_statuses.keys, { include_blank: false, selected: @umrah_customer.umrah_status }, { class: "form-control customer-form-wrapper", readonly: is_display_only } %>
+    </div>
+  </div>
+</div>

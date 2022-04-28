@@ -1,6 +1,9 @@
 class Admin::UmrahCustomer < ApplicationRecord
   attribute :total_participants, :integer, default: 1
   enum is_full_payment_made: { no_payment:0 , partial_payment: 1, full_payment: 2, extra_payment:3 }
+  enum umrah_status: { Pending:0, Performing:1, Completed:2}
+
+  # before_save :update_umrah_status
 
   attributes_to_validate = [
     :customer_name,
@@ -27,6 +30,10 @@ class Admin::UmrahCustomer < ApplicationRecord
   mount_uploader :registration_form, AttachmentUploader
   mount_uploader :deposit_payment, AttachmentUploader
   mount_uploader :final_payment, AttachmentUploader
+
+  def update_umrah_status(status)
+      self.umrah_status = status
+  end
 
   def payment_status
     if self.total_paid.present?

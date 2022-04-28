@@ -7,7 +7,7 @@ module CostCalculatorConcern
     render_in_money_terms(total_package_cost, "RM")
   end
 
-  # def render_payment_status(status)
+  # def render_status(status)
   #   status.split("_").map { |status| status.capitalize
   #   }.join(" ")
   # end

@@ -1,7 +1,14 @@
-<%= render partial: "admin/common/error_message", locals: { model: @umrah_customer } %>
+<div class="form-title-style">
+  <%= render partial: "admin/common/error_message", locals: { model: @umrah_customer } %>
+</div>
+
 <%= form_with(model: @umrah_customer, multipart: true) do |form| %>
+  <h1 class="form-title-style">Status Umrah Jemaah</h1>
   <div class="form-row customer-form-wrapper">
 
+    <%= render partial: "admin/umrah_customers/form_detail/umrah_status", locals: { form: form, is_display_only: is_display_only } %>
+
+    <h1 class="form-title-style">Maklumat Jemaah</h1>
     <%= render partial: "admin/umrah_customers/form_detail/customer_data", locals: { form: form, is_display_only: is_display_only } %>
     <br>
 
@@ -13,7 +20,6 @@
 
     <h1 class="form-title-style">Dokumentasi</h1>
     <%= render partial: "admin/umrah_customers/form_detail/documentation_form", locals: { form: form, is_display_only: is_display_only } %>
-
 
   </div>
 
