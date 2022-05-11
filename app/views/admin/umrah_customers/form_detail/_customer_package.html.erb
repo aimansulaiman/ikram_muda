@@ -1,8 +1,8 @@
 <div style="width:100%;border-style:outset">
   <div class="form-row col-md-10">
     <div class="form-group col-md-7 customer-form-text-style">
-      <%= form.label :umrah_package_id, "Jenis Pakej" %>
-      <%= form.collection_select :umrah_package_id, Admin::UmrahPackage.all, :id, :package_full_name, { include_blank: false }, { class: "form-control customer-form-wrapper", readonly: is_display_only } %>
+      <%= form.label :umrah_package, "Jenis Pakej" %>
+      <%= form.collection_select :umrah_package, Admin::UmrahPackage.all, :id, :package_full_name, { include_blank: false }, { class: "form-control customer-form-wrapper", readonly: is_display_only } %>
     </div>
 
     <div class="form-group col-md-3 customer-form-text-style">

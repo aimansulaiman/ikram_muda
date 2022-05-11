@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_19_091106) do
+ActiveRecord::Schema.define(version: 2022_04_30_051441) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "flight_inbound_details", force: :cascade do |t|
     t.date "flight_departure_date_from_saudi"
@@ -47,9 +50,8 @@ ActiveRecord::Schema.define(version: 2022_04_19_091106) do
     t.string "total_cost"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "flight_inbound_detail_id"
-    t.integer "flight_outbound_detail_id"
-    t.integer "umrah_package_id"
+    t.bigint "flight_inbound_detail_id"
+    t.bigint "flight_outbound_detail_id"
     t.string "quotation_form"
     t.string "registration_form"
     t.string "deposit_payment"
@@ -64,6 +66,7 @@ ActiveRecord::Schema.define(version: 2022_04_19_091106) do
     t.string "citizenship"
     t.integer "is_full_payment_made", default: 0
     t.integer "umrah_status", default: 0
+    t.bigint "umrah_package_id"
     t.index ["flight_inbound_detail_id"], name: "index_umrah_customers_on_flight_inbound_detail_id"
     t.index ["flight_outbound_detail_id"], name: "index_umrah_customers_on_flight_outbound_detail_id"
     t.index ["umrah_package_id"], name: "index_umrah_customers_on_umrah_package_id"
@@ -76,7 +79,7 @@ ActiveRecord::Schema.define(version: 2022_04_19_091106) do
     t.string "hotel_mekah"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "image_id"
+    t.bigint "image_id"
     t.integer "rooms_per_pax"
     t.string "package_full_name"
     t.string "hotel_madinah"

@@ -2,8 +2,8 @@ module CostCalculatorConcern
   extend ActiveSupport::Concern
 
   def calculate_customers_total_cost(customer)
-    customer.umrah_package ||= Admin::UmrahPackage.first
-    total_package_cost = customer.umrah_package.price * customer.total_participants
+    package = customer.umrah_package || Admin::UmrahPackage.first
+    total_package_cost = package.price * customer.total_participants
     render_in_money_terms(total_package_cost, "RM")
   end
 

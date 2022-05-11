@@ -6,6 +6,7 @@ class Admin::UmrahCustomersController < ApplicationController
   # GET /umrah_customers or /umrah_customers.json
   def index
     @umrah_customers = Admin::UmrahCustomer.all
+    @is_umrah_package_available = !Admin::UmrahPackage.all.blank?
   end
 
   # GET /umrah_customers/1 or /umrah_customers/1.json
