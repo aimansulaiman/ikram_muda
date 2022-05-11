@@ -15,7 +15,7 @@
     "webpack-cli": "^3.3.12"
   },
   "version": "0.1.0",
-  "engine": {
+  "engines": {
     "node": "16.x",
     "yarn": "1.x"
   },
