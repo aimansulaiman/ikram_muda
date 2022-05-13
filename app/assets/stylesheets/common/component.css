@@ -2,7 +2,6 @@
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%), url('home/carousel_1.jpeg');
     background-image: -webkit-linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%), url('home/carousel_1.jpeg');
     background-image: -o-linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%), url('home/carousel_1.jpeg');
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%), url('home/carousel_1.jpeg');
     height: 950px;
     background-size: cover;
     background-position: center;
@@ -11,6 +10,8 @@
 
 .carousel-image-two {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%), url('home/carousel_2.jpeg');
+    background-image: -webkit-linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%), url('home/carousel_2.jpeg');
+    background-image: -o-linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%), url('home/carousel_2.jpeg');
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
@@ -19,6 +20,8 @@
 
 .carousel-image-three {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%), url('home/safwa_map.jpeg');
+    background-image: -webkit-linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%), url('home/safwa_map.jpeg');
+    background-image: -o-linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%), url('home/safwa_map.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
