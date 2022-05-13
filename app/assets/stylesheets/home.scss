@@ -554,4 +554,8 @@ body {
   color: #677788;
   text-align: left;
   background-color: #fff;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
