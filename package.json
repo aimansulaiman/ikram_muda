@@ -25,6 +25,6 @@
     "webpack-dev-server": "^3"
   },
   "scripts": {
-    "build": "rollup -c rollup.config.js -w"
+    "build": "rollup -c rollup.config.js"
   }
 }
