@@ -11,10 +11,10 @@
   resources "home"
   # root to: "welcome#index"
 
-  namespace :admin do
-    resources :umrah_customers
-    resources :umrah_packages
-  end
+  # namespace :admin do
+  #   resources :umrah_customers
+  #   resources :umrah_packages
+  # end
 
   root to: "home#index"
 
