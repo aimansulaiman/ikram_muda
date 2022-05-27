@@ -545,6 +545,7 @@
 .nav-admin-option {
   font-size: 14px !important;
 }
+
 body {
   font-family: "Open Sans", sans-serif;
   font-size: .875rem;
@@ -558,4 +559,18 @@ body {
   margin: 0 auto;
   padding: 0px;
   overflow-x: hidden;
+}
+
+.umrah-package-title {
+  color:purple;
+  font-size:18px
+}
+
+.umrah-package-button {
+  background:rgba(68, 214,44,1);
+  height:3.0rem
+}
+
+.umrah-package-height {
+  height:700px
 }
