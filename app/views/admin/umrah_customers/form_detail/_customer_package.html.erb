@@ -1,5 +1,5 @@
 <div style="width:100%;border-style:outset">
-  <div class="form-row col-md-10">
+  <div class="form-row col-md-12">
     <div class="form-group col-md-7 customer-form-text-style">
       <%= form.label :umrah_package, "Jenis Pakej" %>
       <%= form.collection_select :umrah_package, Admin::UmrahPackage.all, :id, :package_full_name, { include_blank: false }, { class: "form-control customer-form-wrapper", readonly: is_display_only } %>
@@ -26,7 +26,7 @@
     </div>
 
     <div class="form-group col-md-2 customer-form-text-style">
-      <%= form.label :total_paid, "Total Paid (RM)", style: 'font-size:12px' %><span>*</span>
+      <%= form.label :total_paid, "Total Paid (RM)", style: 'font-size:12px' %>
       <%= form.text_field :total_paid, class: "form-control customer-form-wrapper", value: calculate_total_paid(@umrah_customer), readonly: is_display_only %>
     </div>
 
