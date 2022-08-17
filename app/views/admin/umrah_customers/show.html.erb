@@ -1,15 +1,9 @@
-<div>
-  <%= render partial: "layouts/navbar" %>
-  <div class="row" style="margin-top:100px">
-    <div class="col-md-2" style="margin-left:50px">
-      <%= render 'layouts/sidebar' %>
-    </div>
-    <div class="col-md-8">
-      <p id="notice"><%= notice %></p>
-      <h1 class="admin-title">View Customer Details</h1>
-      <%= link_to "Edit Customer Detail", edit_admin_umrah_customer_path(@umrah_customer.id), method: :get, class: 'btn btn-primary text-white', style: "font-size:12px" %>
-      <%= link_to 'View All Customers', admin_umrah_customers_path, class: 'btn btn-primary text-white', style: "font-size:12px" %>
-      <%= render partial: "admin/umrah_customers/common/customer_form", locals: { is_display_only: true } %>
-    </div>
+<div class="row">
+  <div class="col-md-8">
+    <p id="notice"><%= notice %></p>
+    <h1 class="admin-title">View Customer Details</h1>
+    <%= link_to "Edit Customer Detail", edit_admin_umrah_customer_path(@umrah_customer.id), method: :get, class: 'btn btn-primary text-white', style: "font-size:12px" %>
+    <%= link_to 'View All Customers', admin_umrah_customers_path, class: 'btn btn-primary text-white', style: "font-size:12px" %>
+    <%= render partial: "admin/umrah_customers/common/customer_form", locals: { is_display_only: true } %>
   </div>
 </div>

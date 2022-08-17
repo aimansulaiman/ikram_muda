@@ -42,7 +42,7 @@ table {
 
 .logo {
   font-size: 34px;
-  margin: 0 0 0 50px;
+  margin: 0 0 0 5px;
   padding-left: 10px;
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
@@ -61,4 +61,18 @@ table {
   border-radius: 0.25rem;
 }
 
+#sidebar-admin .logo,.sidebar-option {
+  color: white
+}
 
+#sidebar-admin .sidebar-option {
+  color: white;
+  font-size:15px;
+  margin-top:5px;
+}
+
+#sidebar-admin .sub-title {
+  color: white;
+  font-size:18px;
+  margin-left:5px;
+}

@@ -1,56 +1,50 @@
-<div>
-  <%= render partial: "layouts/navbar" %>
-<!--  <div class="row" style="margin-top:100px">-->
-  <div class='row' style="margin-top:100px">
-    <div class="col-md-2" style="margin-left:50px">
-      <%= render 'layouts/sidebar' %>
-    </div>
-    <div class="col-md-8">
-      <p id="notice"><%= notice %></p>
+<div class='row'>
+  <div class="col-md-8">
+    <p id="notice"><%= notice %></p>
+    <div class="container">
       <h1 class="admin-title">Umrah Customers</h1>
-      <div class="container">
-        <% if @is_umrah_package_available %>
-          <table class="table col-sm-12 align-self-center">
-            <thead class="thead-dark text-center">
+      <% if @is_umrah_package_available %>
+        <table class="table col-sm-12 align-self-center">
+          <thead class="thead-dark text-center">
+          <tr>
+            <th scope="col">No</th>
+            <th scope="col">Customer Name</th>
+            <th scope="col">Departure Date</th>
+            <th scope="col">Return Date</th>
+            <th scope="col">Payment Status</th>
+            <th scope="col">Umrah Status</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+          </tr>
+          </thead>
+          <% @umrah_customers.each do |customer| %>
+          <tbody>
+          <%# @umrah_customers.each do |customer| %>
             <tr>
-              <th scope="col">No</th>
-              <th scope="col">Customer Name</th>
-              <th scope="col">Departure Date</th>
-              <th scope="col">Return Date</th>
-              <th scope="col">Payment Status</th>
-              <th scope="col">Umrah Status</th>
-              <th scope="col"></th>
-              <th scope="col"></th>
+              <th scope="row" class="counterCell"></th>
+              <td><%= customer.customer_name %></td>
+              <td class="text-center"><%= customer.flight_outbound_detail.flight_departure_date_from_kl %></td>
+              <td class="text-center"><%= customer.flight_inbound_detail.flight_departure_date_from_saudi %></td>
+              <td class="text-center"><%= render_status(customer.is_full_payment_made) %></td>
+              <td class="text-center"><%= customer.umrah_status %></td>
+              <td>
+                <%= link_to "View Detail", admin_umrah_customer_path(customer.id), class: "btn-sm btn-primary primary_button_text text-white", style: "font-size:12px" %>
+              </td>
+              <td>
+                <%= link_to "Delete Customer", admin_umrah_customer_path(customer.id), { :confirm => "Are you sure you want to delete this pattern?", method: :delete, class: "btn-sm btn-danger primary_button_text text-white", style: "font-size:12px" } %>
+              </td>
             </tr>
-            </thead>
-            <tbody>
-            <% @umrah_customers.each do |customer| %>
-              <tr>
-                <th scope="row" class="counterCell"></th>
-                <td><%= customer.customer_name %></td>
-                <td class="text-center"><%= customer.flight_outbound_detail.flight_departure_date_from_kl %></td>
-                <td class="text-center"><%= customer.flight_inbound_detail.flight_departure_date_from_saudi %></td>
-                <td class="text-center"><%= render_status(customer.is_full_payment_made) %></td>
-                <td class="text-center"><%= customer.umrah_status %></td>
-                <td>
-                  <%= link_to "View Detail", admin_umrah_customer_path(customer.id), class: "btn-sm btn-primary primary_button_text text-white", style: "font-size:12px" %>
-                </td>
-                <td>
-                  <%= link_to "Delete Customer", admin_umrah_customer_path(customer.id), { :confirm => "Are you sure you want to delete this pattern?", method: :delete, class: "btn-sm btn-danger primary_button_text text-white", style: "font-size:12px" } %>
-                </td>
-              </tr>
-            <% end %>
-            </tbody>
-          </table>
-          <br>
-          <%= link_to 'New Umrah Customer', new_admin_umrah_customer_path, class: "btn btn-primary primary_button_text text-white", style: "font-size:12px" %>
-        <% else %>
-          <h2> Please create new Umrah Package to proceed.</h2>
-          <%= link_to 'New Umrah Package', new_admin_umrah_package_path, class: "btn btn-primary primary_button_text text-white", style: "font-size:12px" %>
-        <% end %>
-      </div>
-
-
+          <% end %>
+          </tbody>
+        </table>
+        <br>
+        <%= link_to 'New Umrah Customer', new_admin_umrah_customer_path, class: "btn btn-primary primary_button_text text-white", style: "font-size:12px" %>
+      <% else %>
+        <h2> Please create new Umrah Package to proceed.</h2>
+        <%= link_to 'New Umrah Package', new_admin_umrah_package_path, class: "btn btn-primary primary_button_text text-white", style: "font-size:12px" %>
+      <% end %>
     </div>
+
+
   </div>
 </div>

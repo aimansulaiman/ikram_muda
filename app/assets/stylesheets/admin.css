@@ -12,15 +12,8 @@
  *
  *= require bootstrap
  *= require_self
- *= require home
- *= require images
- *= require scaffolds
- *= require umrah_customers
- *= require welcome
- *= require theme/docs.min
- *= require theme/theme.min
- *= require common
+ *= require_tree .
  */
- /**= require_tree .*/
+
 
 

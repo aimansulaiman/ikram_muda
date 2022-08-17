@@ -1,5 +1,6 @@
 class Admin::UmrahCustomersController < ApplicationController
   before_action :set_umrah_customer, only: %i[ show edit update destroy ]
+  layout 'admin'
 
   include CostCalculatorConcern
 

@@ -1,0 +1,19 @@
+<tbody>
+<tr>
+  <th scope="row" class="counterCell"></th>
+  <td><%= umrah_package.title %></td>
+  <td><%= umrah_package.package_type %></td>
+  <td><%= calculate_package_price(umrah_package.price, "RM") %></td>
+  <td><%= umrah_package.hotel_mekah %></td>
+  <td><%= umrah_package.hotel_madinah %></td>
+  <td><%= umrah_package.rooms_per_pax %></td>
+  <td>
+    <%= link_to "View Detail", admin_umrah_package_path(umrah_package.id, is_poster_for_package: true), method: :get, class: "btn btn-primary btn-sm primary_button_text text-white", style: "font-size:12px" %>
+  </td>
+  <td>
+    <% if umrah_package.umrah_customer.blank? %>
+      <%= link_to "Delete Package", admin_umrah_package_path(umrah_package.id), method: :delete, class: "btn btn-danger btn-sm primary_button_text text-white", style: "font-size:12px" %>
+    <% end %>
+  </td>
+</tr>
+</tbody>

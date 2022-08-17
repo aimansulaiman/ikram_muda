@@ -11,10 +11,15 @@
   resources "home"
   # root to: "welcome#index"
 
-  # namespace :admin do
-  #   resources :umrah_customers
-  #   resources :umrah_packages
-  # end
+  namespace :admin do
+    resources :umrah_customers
+    resources :umrah_packages
+    resources :user_roles do
+      member do
+        get 'admin/user_roles', action: 'get_product', as: 'user_role_product'
+      end
+    end
+  end
 
   root to: "home#index"
 

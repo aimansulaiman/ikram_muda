@@ -1,5 +1,6 @@
 class Admin::UmrahPackagesController < ApplicationController
   before_action :get_umrah_package_detail, only: %i[ show edit update destroy]
+  layout 'admin'
 
   include UmrahPackageConcern
 

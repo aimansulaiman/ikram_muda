@@ -1,0 +1,31 @@
+<div class="container">
+  <h1 class="admin-title">User Roles</h1>
+  <table class="table col-sm-12 align-self-center">
+    <thead class="thead-dark text-center align-self-center">
+    <tr>
+      <th scope="col">No</th>
+      <th scope="col">User Name</th>
+      <th scope="col">User Email</th>
+      <th scope="col">User Role</th>
+      <th></th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @user_roles.each do |user| %>
+      <tr>
+        <th scope="row" class="counterCell"></th>
+        <td class="text-center"><%= user.name %></td>
+        <td class="text-center"><%= user.email%></td>
+        <td class="text-center"><%= user.roles %></td>
+        <td>
+          <%= link_to "Edit Role", admin_user_role_path(user.id) ,method: :get, class: "btn-sm btn-primary primary_button_text text-white", style: "font-size:12px" %>
+        </td>
+        <td>
+          <%= link_to "Delete Role", admin_user_role_path(user.id) ,method: :delete, class: "btn-sm btn-danger primary_button_text text-white", style: "font-size:12px" %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
